@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from product.api import serializers
-from product import models
+from apps.product.api import serializers
+from apps.product import models
 
 class ProductsViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ProductsSerializer
