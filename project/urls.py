@@ -7,6 +7,7 @@ from product.api import viewsets as productsviewset
 
 route = routers.DefaultRouter()
 route.register(r'products', productsviewset.ProductsViewSet, basename='products')
+route.register(r'products_class', productsviewset.ProductsClassesSet, basename='products_class')
 
 
 urlpatterns = [
