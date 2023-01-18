@@ -8,6 +8,7 @@ from django.http import Http404
 from rest_framework.parsers import JSONParser 
 from rest_framework import status 
 from drf_yasg.utils import swagger_auto_schema
+from rest_framework.permissions import IsAuthenticated
 
 from .models import Sale, Product
 from .serializers import SalesSerializer
@@ -15,6 +16,7 @@ from apps.reports.models import Reports
 from apps.sales.models import PAYMENTS
 
 class SaleAPIView(APIView):
+    permission_classes = (IsAuthenticated, )
     def get(self, request):
         sales = Sale.objects.all()
         serializer = SalesSerializer(sales, many=True)

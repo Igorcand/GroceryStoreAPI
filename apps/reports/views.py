@@ -4,12 +4,14 @@ from rest_framework.views import APIView
 from rest_framework.parsers import JSONParser 
 from rest_framework import status 
 from drf_yasg.utils import swagger_auto_schema
+from rest_framework.permissions import IsAuthenticated
 
 from .models import Reports
 from .serializers import ReportsSerializers
 
 
 class ReportsAPIView(APIView):
+    permission_classes = (IsAuthenticated, )
     def get(self, request):
         reports = Reports.objects.all()
         serializer = ReportsSerializers(reports, many=True)
