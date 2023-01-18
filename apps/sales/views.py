@@ -26,6 +26,7 @@ class SaleAPIView(APIView):
             quantity = serializer.validated_data.get('quantity')
             product_name = serializer.validated_data.get('product')
             data = serializer.validated_data.get('data')
+            payment = serializer.validated_data.get('payment')
 
             product = Product.objects.get(name = product_name)
             stock = int(product.quantity)
@@ -34,7 +35,7 @@ class SaleAPIView(APIView):
                 return Response({"message":f"Cannot buy '{quantity}'  of '{product_name}' because we just have {stock} on stock"},status.HTTP_400_BAD_REQUEST)
             else:
                 sale_price = int(quantity) * float(product.price)
-                report = Reports(product=product_name, category=product.category, quantity_itens=quantity, stock=new_stock, sale=sale_price, data=data)
+                report = Reports(product=product_name, category=product.category, payment=payment, quantity_itens=quantity, stock=new_stock, sale=sale_price, data=data)
                 report.save()
                 product.quantity = new_stock
                 product.save()
