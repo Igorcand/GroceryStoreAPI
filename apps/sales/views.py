@@ -10,6 +10,7 @@ from rest_framework import status
 
 from .models import Sale, Product
 from .serializers import SalesSerializer
+from apps.reports.models import Reports
 
 class SaleAPIView(APIView):
     def get(self, request):
@@ -24,6 +25,7 @@ class SaleAPIView(APIView):
             serializer.save()
             quantity = serializer.validated_data.get('quantity')
             product_name = serializer.validated_data.get('product')
+            data = serializer.validated_data.get('data')
 
             product = Product.objects.get(name = product_name)
             stock = int(product.quantity)
@@ -31,6 +33,9 @@ class SaleAPIView(APIView):
             if new_stock < 0:
                 return Response({"message":f"Cannot buy '{quantity}'  of '{product_name}' because we just have {stock} on stock"},status.HTTP_400_BAD_REQUEST)
             else:
+                sale_price = int(quantity) * float(product.price)
+                report = Reports(product=product_name, category=product.category, quantity_itens=quantity, stock=new_stock, sale=sale_price, data=data)
+                report.save()
                 product.quantity = new_stock
                 product.save()
 
