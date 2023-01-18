@@ -5,6 +5,7 @@ from django.http.response import JsonResponse
 from django.http import Http404
 from rest_framework.parsers import JSONParser 
 from rest_framework import status 
+from drf_yasg.utils import swagger_auto_schema
 
 from .models import Category, Product
 from .serializers import CategorySerializer, ProductsSerializer
@@ -15,6 +16,7 @@ class ProductAPIView(APIView):
         serializer = ProductsSerializer(produtos, many=True)
         return Response(serializer.data)
 
+    @swagger_auto_schema(request_body=ProductsSerializer)
     def post(self, request):
         data =  JSONParser().parse(request)
         serializer = ProductsSerializer(data=data)
@@ -36,6 +38,7 @@ class ProductDetailAPIView(APIView):
         serializer = ProductsSerializer(product)
         return Response(serializer.data)
 
+    @swagger_auto_schema(request_body=ProductsSerializer)
     def put(self, request, pk, format=None):
         product = self.get_object(pk)
         serializer = ProductsSerializer(product, data=request.data)
@@ -55,6 +58,7 @@ class CategoryAPIView(APIView):
         serializer = CategorySerializer(produtos, many=True)
         return Response(serializer.data)
 
+    @swagger_auto_schema(request_body=CategorySerializer)
     def post(self, request):
         data =  JSONParser().parse(request)
         serializer = CategorySerializer(data=data)

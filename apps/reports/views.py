@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.http.response import JsonResponse
-from django.http import Http404
 from rest_framework.parsers import JSONParser 
 from rest_framework import status 
+from drf_yasg.utils import swagger_auto_schema
 
 from .models import Reports
 from .serializers import ReportsSerializers
@@ -16,6 +15,7 @@ class ReportsAPIView(APIView):
         serializer = ReportsSerializers(reports, many=True)
         return Response(serializer.data)
 
+    @swagger_auto_schema(request_body=ReportsSerializers)
     def post(self, request):
         data =  JSONParser().parse(request)
         if 'data' in data.keys():

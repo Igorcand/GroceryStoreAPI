@@ -7,6 +7,7 @@ from django.http.response import JsonResponse
 from django.http import Http404
 from rest_framework.parsers import JSONParser 
 from rest_framework import status 
+from drf_yasg.utils import swagger_auto_schema
 
 from .models import Sale, Product
 from .serializers import SalesSerializer
@@ -19,6 +20,7 @@ class SaleAPIView(APIView):
         serializer = SalesSerializer(sales, many=True)
         return Response(serializer.data)
 
+    @swagger_auto_schema(request_body=SalesSerializer)
     def post(self, request):
         data =  JSONParser().parse(request)
         serializer = SalesSerializer(data=data)
