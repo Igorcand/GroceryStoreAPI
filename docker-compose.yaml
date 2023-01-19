@@ -1,16 +1,15 @@
-version: "3"
+version: "3.8"
 
 services:
-  polibrastest:
+  app:
     build:
       context: . #Sets the directory for docker-compose to build.
+    volumes:
+      - .:/django
 
     # Maps port on the local machine to port on Docker image
     ports:
       - "8000:8000"
-      
-    volumes: 
-    # Copy changes made to the project to your image in real-time.
-      - .:/PoliBrasTest
-    # Handles the command used to run the project in the Docker container.
-    command: sh -c "python manage.py runserver 0.0.0.0:8000" 
+    image: app:django
+    container_name:  django_container
+    command: python manage.py runserver 0.0.0.0:8000
