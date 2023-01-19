@@ -27,6 +27,8 @@ class SaleAPIView(APIView):
         data = JSONParser().parse(request)
         serializer = SalesSerializer(data=data)
         if serializer.is_valid():
+            if not data:
+                raise APIException("You need to pass the fields")
             quantity = serializer.validated_data.get("quantity")
             product_name = serializer.validated_data.get("product")
             data = serializer.validated_data.get("data")
@@ -47,7 +49,7 @@ class SaleAPIView(APIView):
                 report = Reports(
                     product=product_name,
                     category=product.category,
-                    payment=PAYMENTS[int(payment)][1],
+                    payment=payment,
                     quantity_itens=quantity,
                     stock=new_stock,
                     sale=sale_price,
