@@ -10,7 +10,6 @@ categories_url = reverse("categories")
 categories_detail_url = reverse("categories_detail", kwargs={'pk': 1})
 
 pytestmark = pytest.mark.django_db
-HEADERS = {'Content-Type': 'application/json'}
 
 # --------------------- Test Get Categories -----------------------
 

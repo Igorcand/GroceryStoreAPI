@@ -10,7 +10,6 @@ products_url = reverse("products")
 products_detail_url = reverse("products_detail", kwargs={'pk': 1})
 
 pytestmark = pytest.mark.django_db
-HEADERS = {'Content-Type': 'application/json'}
 
 # --------------------- Test Get Products -----------------------
 
