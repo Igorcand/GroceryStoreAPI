@@ -1,15 +1,9 @@
-FROM python:3.7-alpine
-EXPOSE 8000
+FROM python:3.8-slim-buster
+WORKDIR /app
+COPY requirements.txt requirements.txt
+RUN pip install --upgrade pip 
+RUN pip install -r requirements.txt
 
-RUN mkdir /polibrastest
-WORKDIR /polibrastest 
+COPY . .
 
-COPY Pipfile /polibrastest
-COPY Pipfile.lock /polibrastest
-
-RUN pip install pipenv --upgrade
-RUN pipenv install --system
-
-COPY . /polibrastest 
-ENTRYPOINT ["python3"] 
-CMD ["manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
