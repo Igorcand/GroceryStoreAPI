@@ -12,7 +12,7 @@ PAYMENTS = (
 
 class Sale(models.Model):
     data = models.DateField(null=True, blank=True)
-    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.PROTECT)
+    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL)
     quantity = models.DecimalField(max_digits=13, decimal_places=2, validators=[
                                     MinValueValidator(Decimal('0.00'))], null=True, blank=True)
     payment = models.CharField(
