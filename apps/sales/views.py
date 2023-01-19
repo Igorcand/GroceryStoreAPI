@@ -1,7 +1,5 @@
-from django.shortcuts import render
-
-from django.shortcuts import render
 from rest_framework.views import APIView
+from rest_framework.exceptions import APIException
 from rest_framework.response import Response
 from django.http.response import JsonResponse
 from django.http import Http404
@@ -27,7 +25,6 @@ class SaleAPIView(APIView):
         data =  JSONParser().parse(request)
         serializer = SalesSerializer(data=data)
         if serializer.is_valid():
-            serializer.save()
             quantity = serializer.validated_data.get('quantity')
             product_name = serializer.validated_data.get('product')
             data = serializer.validated_data.get('data')
@@ -44,7 +41,6 @@ class SaleAPIView(APIView):
                 report.save()
                 product.quantity = new_stock
                 product.save()
-
 
             serializer.save()
             return JsonResponse(serializer.data, status=status.HTTP_201_CREATED) 

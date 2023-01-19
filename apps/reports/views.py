@@ -30,6 +30,15 @@ class ReportsAPIView(APIView):
                 reports = reports.filter(payment=data['payment'])
 
             serializer = ReportsSerializers(reports, many=True)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            description = serializer.data
+            total_items = 0
+            total_value = 0
+            for descript in description:
+                total_items+=descript['quantity_itens']
+                total_value+=float(descript['sale'])
+
+            response = {'data':{'total_items': total_items, 'total_value':total_value}, 'description': description}
+
+            return Response(response, status=status.HTTP_201_CREATED)
         return Response({"message":f"You need to pass even 'data' value to do a filter on database"},status.HTTP_400_BAD_REQUEST)
         
