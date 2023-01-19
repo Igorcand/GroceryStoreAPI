@@ -26,12 +26,7 @@ class ProductAPIView(APIView):
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
-        try:
-            category_pk = serializer.validated_data.get("category")
-            category = Category.objects.get(pk=category_pk)
-            return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except Category.DoesNotExist:
-            raise APIException("This category doesn't exist")
+        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class ProductDetailAPIView(APIView):
@@ -53,6 +48,15 @@ class ProductDetailAPIView(APIView):
         product = self.get_object(pk)
         serializer = ProductsSerializer(product, data=request.data)
         if serializer.is_valid():
+            quantity = serializer.validated_data.get("quantity")
+            if quantity < 0:
+                return Response(
+                {
+                    "message": f"Cannot update a negative quantity."
+                },
+                status.HTTP_400_BAD_REQUEST,
+            )
+                
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
