@@ -1,19 +1,18 @@
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import APIException
 from django.http.response import JsonResponse
-from django.http import HttpRequest
-from rest_framework.parsers import JSONParser 
-from rest_framework import status 
+from rest_framework.parsers import JSONParser
+from rest_framework import status
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Category, Product
 from .serializers import CategorySerializer, ProductsSerializer
 
+
 class ProductAPIView(APIView):
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request):
         produtos = Product.objects.all()
@@ -22,23 +21,21 @@ class ProductAPIView(APIView):
 
     @swagger_auto_schema(request_body=ProductsSerializer)
     def post(self, request):
-        data =  JSONParser().parse(request)
+        data = JSONParser().parse(request)
         serializer = ProductsSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED) 
+            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
         try:
-            category_pk = serializer.validated_data.get('category')
+            category_pk = serializer.validated_data.get("category")
             category = Category.objects.get(pk=category_pk)
             return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Category.DoesNotExist:
             raise APIException("This category doesn't exist")
 
-        
-
 
 class ProductDetailAPIView(APIView):
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
 
     def get_object(self, pk):
         try:
@@ -65,8 +62,10 @@ class ProductDetailAPIView(APIView):
         product.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
 class CategoryAPIView(APIView):
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
+
     def get(self, request):
         produtos = Category.objects.all()
         serializer = CategorySerializer(produtos, many=True)
@@ -74,22 +73,23 @@ class CategoryAPIView(APIView):
 
     @swagger_auto_schema(request_body=CategorySerializer)
     def post(self, request):
-        data =  JSONParser().parse(request)
+        data = JSONParser().parse(request)
         serializer = CategorySerializer(data=data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED) 
+            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class CategoryDetailAPIView(APIView):
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
+
     def get_object(self, pk):
         try:
             return Category.objects.get(pk=pk)
         except Category.DoesNotExist:
             raise APIException("This category doesn't exist")
-        
+
     def get(self, request, pk, format=None):
         category = self.get_object(pk)
         serializer = CategorySerializer(category)
@@ -101,4 +101,9 @@ class CategoryDetailAPIView(APIView):
             category.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         except:
-            return Response({"message":f"Cannot delete '{category}' because this category is been used."},status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {
+                    "message": f"Cannot delete '{category}' because this category is been used."
+                },
+                status.HTTP_400_BAD_REQUEST,
+            )

@@ -11,18 +11,57 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('products', '0001_initial'),
+        ("products", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Sale',
+            name="Sale",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('data', models.DateField(blank=True, null=True)),
-                ('quantity', models.DecimalField(blank=True, decimal_places=2, max_digits=13, null=True, validators=[django.core.validators.MinValueValidator(Decimal('0.00'))])),
-                ('payment', models.CharField(blank=True, choices=[('0', 'Credit Card'), ('1', 'Debit Card'), ('2', 'Money')], max_length=3, null=True)),
-                ('product', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, to='products.product')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("data", models.DateField(blank=True, null=True)),
+                (
+                    "quantity",
+                    models.DecimalField(
+                        blank=True,
+                        decimal_places=2,
+                        max_digits=13,
+                        null=True,
+                        validators=[
+                            django.core.validators.MinValueValidator(Decimal("0.00"))
+                        ],
+                    ),
+                ),
+                (
+                    "payment",
+                    models.CharField(
+                        blank=True,
+                        choices=[
+                            ("0", "Credit Card"),
+                            ("1", "Debit Card"),
+                            ("2", "Money"),
+                        ],
+                        max_length=3,
+                        null=True,
+                    ),
+                ),
+                (
+                    "product",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        to="products.product",
+                    ),
+                ),
             ],
         ),
     ]
