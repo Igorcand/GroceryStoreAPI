@@ -12,6 +12,11 @@ PAYMENTS = (
 
 
 class Sale(models.Model):
+    class PaymentsType(models.TextChoices):
+        CREDIT_CARD = "Credit Card"
+        DEBIT_CARD = "Debit Card"
+        MONEY = "Money"
+
     data = models.DateField(null=True, blank=True)
     product = models.ForeignKey(
         Product, null=True, blank=True, on_delete=models.SET_NULL
@@ -23,7 +28,7 @@ class Sale(models.Model):
         null=True,
         blank=True,
     )
-    payment = models.CharField(max_length=3, null=True, blank=True, choices=PAYMENTS)
+    payment = models.CharField(max_length=30, null=True, blank=True,  choices=PaymentsType.choices, default=PaymentsType.CREDIT_CARD)
 
     def __str__(self):
         return f"{self.product} x {self.quantity}"
