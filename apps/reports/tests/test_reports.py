@@ -51,7 +51,7 @@ def test_create_reports_with_argumets_empty_should_fail(client) -> None:
     assert response.status_code == 400
     assert json.loads(response.content) ==  {"message": "You need to pass even 'data' value to do a filter on database"}
 
-def test_product_category_should_succeed(client) -> None:
+def test_filtring_report_should_succeed(client) -> None:
     report1 = Reports(product='Product1', category='Category1', 
             quantity_itens=2, stock=45, sale=45.70, 
             payment='Money', data="2023-01-18")

@@ -40,7 +40,7 @@ def test_create_sale_without_argumets_should_fail(client) -> None:
     assert json.loads(response.content) == {"detail": 
                                             "JSON parse error - Expecting value: line 1 column 1 (char 0)"}
 
-def test_create_products_with_argumets_empty_should_fail(client) -> None:
+def test_create_sale_with_argumets_empty_should_fail(client) -> None:
     category = Category.objects.create(name="CategoryTest")
     test_product = Product.objects.create(name="ProductTest", description='description', quantity=2, price=12.20, category = category)
     test_product.save()
@@ -54,7 +54,6 @@ def test_add_sale_with_arguments_should_succeed(client) -> None:
     category = Category.objects.create(name="CategoryTest")
     test_product = Product.objects.create(name="ProductTest", description='description', quantity=2, price=12.20, category = category)
     test_product.save()
-    print(Product.objects.all())
     response = client.post(path=sales_url, data={
                                                     "data": "2023-01-18",
                                                     "quantity": "1.00",
@@ -71,7 +70,6 @@ def test_add_sale_without_stock_should_fail(client) -> None:
     category = Category.objects.create(name="CategoryTest")
     test_product = Product.objects.create(name="ProductTest", description='description', quantity=2, price=12.20, category = category)
     test_product.save()
-    print(Product.objects.all())
     response = client.post(path=sales_url, data={
                                                     "data": "2023-01-18",
                                                     "quantity": "3.00",

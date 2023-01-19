@@ -140,12 +140,12 @@ def test_update_nonexisted_product_should_fail(client) -> None:
 
 # --------------------- Test Delete Categories -----------------------
 
-def test_delete_category_nonexisted_should_fail(client) -> None:
+def test_delete_product_nonexisted_should_fail(client) -> None:
     response = client.delete(path=products_detail_url)
     assert response.status_code == 500
     assert json.loads(response.content) == {'detail': "This product doesn't exist"}
 
-def test_delete_category_existed_should_succeed(client) -> None:
+def test_delete_product_existed_should_succeed(client) -> None:
     category = Category.objects.create(name="CategoryTest")
     test_product = Product.objects.create(name="ProductTest", description='description', quantity=2, price=12.20, category = category)
     response = client.delete(path=products_detail_url)
