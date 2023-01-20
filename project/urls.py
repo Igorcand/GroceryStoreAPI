@@ -26,6 +26,7 @@ urlpatterns = [
     path("api/", include("apps.products.urls")),
     path("api/", include("apps.sales.urls")),
     path("api/", include("apps.reports.urls")),
+    path("api/", include("apps.authorization.urls")),
 ]
 
 # Swagger
