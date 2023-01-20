@@ -15,7 +15,7 @@ from apps.reports.models import Reports
 
 
 class SaleAPIView(APIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
     def get(self, request):
         sales = Sale.objects.all()

@@ -12,8 +12,7 @@ from .serializers import CategorySerializer, ProductsSerializer
 
 
 class ProductAPIView(APIView):
-    permission_classes = (IsAuthenticated,)
-
+    # permission_classes = (IsAuthenticated,)
     def get(self, request):
         produtos = Product.objects.all()
         serializer = ProductsSerializer(produtos, many=True)
@@ -50,7 +49,7 @@ class ProductAPIView(APIView):
 
 
 class ProductDetailAPIView(APIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
     def get_object(self, pk):
         try:
@@ -88,7 +87,7 @@ class ProductDetailAPIView(APIView):
 
 
 class CategoryAPIView(APIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
     def get(self, request):
         produtos = Category.objects.all()
@@ -106,7 +105,7 @@ class CategoryAPIView(APIView):
 
 
 class CategoryDetailAPIView(APIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
     def get_object(self, pk):
         try:
