@@ -11,7 +11,6 @@ from rest_framework.permissions import IsAuthenticated
 from .models import Sale, Product
 from .serializers import SalesSerializer
 from apps.reports.models import Reports
-from apps.sales.models import PAYMENTS
 
 
 class SaleAPIView(APIView):
@@ -35,8 +34,13 @@ class SaleAPIView(APIView):
             payment = serializer.validated_data.get("payment")
 
             product = Product.objects.get(name=product_name)
-            stock = int(product.stock)
-            new_stock = stock - int(quantity)
+            unit = product.unit 
+            if unit=='Item':
+                quantity = int(quantity)
+            else:
+                quantity = float(quantity)
+            stock = product.stock
+            new_stock = stock - quantity
             if new_stock < 0:
                 return Response(
                     {
@@ -56,7 +60,7 @@ class SaleAPIView(APIView):
                     data=data,
                 )
                 report.save()
-                product.quantity = new_stock
+                product.stock = new_stock
                 product.save()
 
             serializer.save()

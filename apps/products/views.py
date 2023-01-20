@@ -24,8 +24,28 @@ class ProductAPIView(APIView):
         data = JSONParser().parse(request)
         serializer = ProductsSerializer(data=data)
         if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
+            unit = serializer.validated_data.get("unit")
+            if unit==None or unit =='Item':
+                name = serializer.validated_data.get("name")
+                description = serializer.validated_data.get("description")
+                stock = serializer.validated_data.get("stock")
+                price = serializer.validated_data.get("price")
+                category = serializer.validated_data.get("category")
+
+                stock = serializer.validated_data.get("stock")
+                stock = int(stock)
+                prod = Product(name=name,
+                        description=description,
+                        stock=stock,
+                        price=price,
+                        category=category
+                        )
+                prod.save()
+                serializer = ProductsSerializer(prod)
+                return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
+            else:
+                serializer.save()
+                return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

@@ -3,14 +3,6 @@ from django.core.validators import MinValueValidator
 from decimal import Decimal
 from apps.products.models import Product
 
-# Create your models here.
-PAYMENTS = (
-    ("0", "Credit Card"),
-    ("1", "Debit Card"),
-    ("2", "Money"),
-)
-
-
 class Sale(models.Model):
     class PaymentsType(models.TextChoices):
         CREDIT_CARD = "Credit Card"
