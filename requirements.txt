@@ -4,3 +4,4 @@ drf-yasg==1.21.4
 djangorestframework-simplejwt==5.2.2
 pytest
 pytest-django 
+redis==3.4.1
