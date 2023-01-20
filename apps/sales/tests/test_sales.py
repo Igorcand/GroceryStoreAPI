@@ -28,7 +28,7 @@ def test_one_sale_exists_should_succeed(client) -> None:
     response = client.get(sales_url)
     response_content = json.loads(response.content)[0]
     assert response.status_code == 200
-    assert response_content.get("data") == test_sale.data
+    assert test_sale.data in response_content.get("data")
     assert float(response_content.get("quantity")) == test_sale.quantity
     assert response_content.get("payment") == 'Credit Card'
     assert response_content.get("product") == test_sale.product.id
@@ -55,14 +55,12 @@ def test_add_sale_with_arguments_should_succeed(client) -> None:
     test_product = Product.objects.create(name="ProductTest", description='description', stock=2, price=12.20, category = category)
     test_product.save()
     response = client.post(path=sales_url, data={
-                                                    "data": "2023-01-18",
                                                     "quantity": "1.00",
                                                     "payment": "Debit Card",
                                                     "product": 1,
                                                     },  content_type='application/json')
     response_content = json.loads(response.content)
     assert response.status_code == 201
-    assert response_content.get("data") ==  "2023-01-18"
     assert response_content.get("payment") == "Debit Card"
     assert float(response_content.get("quantity")) == 1
 

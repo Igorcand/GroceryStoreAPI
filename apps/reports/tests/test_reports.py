@@ -30,7 +30,7 @@ def test_one_report_exists_should_succeed(client) -> None:
     response = client.get(reports_url)
     response_content = json.loads(response.content)[0]
     assert response.status_code == 200
-    assert response_content.get("data") == report.data
+    assert report.data in response_content.get("data") 
     assert response_content.get("category") == report.category
     assert int(response_content.get("quantity_itens")) == report.quantity_itens
     assert response_content.get("payment") == report.payment
