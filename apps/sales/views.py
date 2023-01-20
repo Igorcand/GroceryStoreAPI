@@ -7,6 +7,7 @@ from rest_framework.parsers import JSONParser
 from rest_framework import status
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.permissions import IsAuthenticated
+import datetime
 
 from .models import Sale, Product
 from .serializers import SalesSerializer
@@ -49,6 +50,7 @@ class SaleAPIView(APIView):
                     status.HTTP_400_BAD_REQUEST,
                 )
             else:
+                now = datetime.datetime.now()
                 sale_price = int(quantity) * float(product.price)
                 report = Reports(
                     product=product_name,
@@ -57,7 +59,7 @@ class SaleAPIView(APIView):
                     quantity_itens=quantity,
                     stock=new_stock,
                     sale=sale_price,
-                    data=data,
+                    data=now,
                 )
                 report.save()
                 product.stock = new_stock

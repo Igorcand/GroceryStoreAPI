@@ -22,7 +22,7 @@ class ReportsAPIView(APIView):
     def post(self, request):
         data = JSONParser().parse(request)
         if "data" in data.keys():
-            reports = Reports.objects.filter(data=data["data"])
+            reports = Reports.objects.filter(data__startswith=data["data"])
             if "product" in data.keys():
                 reports = reports.filter(product=data["product"])
             if "category" in data.keys():

@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MinValueValidator
 from decimal import Decimal
 from apps.products.models import Product
+from django.utils.timezone import now
 
 class Sale(models.Model):
     class PaymentsType(models.TextChoices):
@@ -9,7 +10,7 @@ class Sale(models.Model):
         DEBIT_CARD = "Debit Card"
         MONEY = "Money"
 
-    data = models.DateField(null=True, blank=True)
+    data = models.DateTimeField(default=now, editable=True)
     product = models.ForeignKey(
         Product, null=True, blank=True, on_delete=models.SET_NULL
     )
