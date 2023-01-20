@@ -7,7 +7,7 @@ class ProductAdmin(admin.ModelAdmin):
             'fields': ('name', 'description')
             }),
         ('Stock', {
-            'fields': ('quantity',)
+            'fields': ('stock',)
             }),
         ('Price', {
             'fields': ('price',)
@@ -17,7 +17,7 @@ class ProductAdmin(admin.ModelAdmin):
             })
     )
     list_filter = ['category', 'price']
-    list_display = ['name', 'quantity', 'price']
+    list_display = ['name', 'stock', 'price']
 
 class CategoryAdmin(admin.ModelAdmin):
     fieldsets = (

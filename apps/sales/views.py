@@ -35,7 +35,7 @@ class SaleAPIView(APIView):
             payment = serializer.validated_data.get("payment")
 
             product = Product.objects.get(name=product_name)
-            stock = int(product.quantity)
+            stock = int(product.stock)
             new_stock = stock - int(quantity)
             if new_stock < 0:
                 return Response(

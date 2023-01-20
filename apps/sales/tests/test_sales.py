@@ -21,7 +21,7 @@ def test_zero_sales_should_return_empty_list(client) -> None:
 
 def test_one_sale_exists_should_succeed(client) -> None:
     category = Category.objects.create(name="CategoryTest")
-    test_product = Product.objects.create(name="ProductTest", description='description', quantity=2, price=12.20, category = category)
+    test_product = Product.objects.create(name="ProductTest", description='description', stock=2, price=12.20, category = category)
     test_sale = Sale(data='2023-01-18', product=test_product, quantity=1.0,)
     test_sale.save()
 
@@ -42,7 +42,7 @@ def test_create_sale_without_argumets_should_fail(client) -> None:
 
 def test_create_sale_with_argumets_empty_should_fail(client) -> None:
     category = Category.objects.create(name="CategoryTest")
-    test_product = Product.objects.create(name="ProductTest", description='description', quantity=2, price=12.20, category = category)
+    test_product = Product.objects.create(name="ProductTest", description='description', stock=2, price=12.20, category = category)
     test_product.save()
     test_sale = Sale(data='2023-01-18', product=test_product, quantity=1.0,)
     test_sale.save()
@@ -52,7 +52,7 @@ def test_create_sale_with_argumets_empty_should_fail(client) -> None:
 
 def test_add_sale_with_arguments_should_succeed(client) -> None:
     category = Category.objects.create(name="CategoryTest")
-    test_product = Product.objects.create(name="ProductTest", description='description', quantity=2, price=12.20, category = category)
+    test_product = Product.objects.create(name="ProductTest", description='description', stock=2, price=12.20, category = category)
     test_product.save()
     response = client.post(path=sales_url, data={
                                                     "data": "2023-01-18",
@@ -68,7 +68,7 @@ def test_add_sale_with_arguments_should_succeed(client) -> None:
 
 def test_add_sale_without_stock_should_fail(client) -> None:
     category = Category.objects.create(name="CategoryTest")
-    test_product = Product.objects.create(name="ProductTest", description='description', quantity=2, price=12.20, category = category)
+    test_product = Product.objects.create(name="ProductTest", description='description', stock=2, price=12.20, category = category)
     test_product.save()
     response = client.post(path=sales_url, data={
                                                     "data": "2023-01-18",

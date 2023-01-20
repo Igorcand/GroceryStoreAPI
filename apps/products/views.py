@@ -48,11 +48,11 @@ class ProductDetailAPIView(APIView):
         product = self.get_object(pk)
         serializer = ProductsSerializer(product, data=request.data)
         if serializer.is_valid():
-            quantity = serializer.validated_data.get("quantity")
-            if quantity < 0:
+            stock = serializer.validated_data.get("stock")
+            if stock < 0:
                 return Response(
                 {
-                    "message": f"Cannot update a negative quantity."
+                    "message": f"Cannot update a negative stock."
                 },
                 status.HTTP_400_BAD_REQUEST,
             )
