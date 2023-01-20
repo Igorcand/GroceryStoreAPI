@@ -78,4 +78,4 @@ def test_add_sale_without_stock_should_fail(client) -> None:
                                                     },  content_type='application/json')
     response_content = json.loads(response.content)
     assert response.status_code == 400
-    assert json.loads(response.content) == {'message': "Cannot buy '3.00'  of 'ProductTest' because we just have 2 on stock"}
+    assert json.loads(response.content) == {'message': "Cannot buy '3'  of 'ProductTest' because we just have 2.0 on stock"}

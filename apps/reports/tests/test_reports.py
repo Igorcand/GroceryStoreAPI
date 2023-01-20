@@ -34,7 +34,7 @@ def test_one_report_exists_should_succeed(client) -> None:
     assert response_content.get("category") == report.category
     assert int(response_content.get("quantity_itens")) == report.quantity_itens
     assert response_content.get("payment") == report.payment
-    assert int(response_content.get("stock")) == report.stock
+    assert float(response_content.get("stock")) == report.stock
     assert float(response_content.get("sale")) == report.sale
 
 # --------------------- Test Post Reports -----------------------
