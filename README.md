@@ -110,7 +110,7 @@ Para lançar as categorias dos produtos do seu mercadinho, voce deve utilizar as
 ### Como usar ###
 
 #### Visualizar categorias ####
-Para visualizar as categorias cadastradas você deve utilizar o método HTTP GET no End-Point abaixo para visualizar todos os produtos cadastrados
+Para visualizar as categorias cadastradas você deve utilizar o método HTTP GET no End-Point abaixo para visualizar todos as categorias cadastradas
 - http://localhost/api/categories/ (MÉTODO HTTP GET) 
 
 (IMAGEM)
@@ -169,6 +169,11 @@ Para adicionar produtos você deve utilizar o End-Point principal descrito acima
 OBS: O cadastramento de produtos só é possivel tendo um categoria já cadastrado no banco de dados, caso não tenha, voce será avisado.
 
 (IMAGEM)
+
+OBS: O cadastramento de produtos só é possivel para um produto novo, caso o produto já exista, voce será avisado.
+
+(IMAGEM)
+
 
 #### Atualizar produtos ####
 Para atualizar os produtos existentes você deve utilizar o End-Point principal, passando na URL o ID do produto específico que deseja atualizar, descrito acima e passar um JSON com os parametros necessários para o cadastramento.
