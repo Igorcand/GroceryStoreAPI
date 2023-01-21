@@ -1,4 +1,7 @@
 # PoliBrasTest #
+
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Igorcand/PoliBrasTest/blob/master/LICENSE) 
+
 # Sobre o Projeto #
 <p> Esse projeto foi desenvolvido a partir do processo seletivo para vaga de Back-End da empresa PoliBras Softwere. Como descrito no edital, o intuito da aplicação é fazer uma API de gerenciamento de um pequeno mercadinho, utilizando o Django, um framework python, com as seguintes funcionalidades: Cadastro de produtos, Lançamento de vendas e Relatório de caixa. </p>
 
@@ -75,7 +78,7 @@
 # COMO RODAR O PROJETO #
 ```bash
 # Clonar o repositorio
-git clone https://github.com/Igorcand
+git clone https://github.com/Igorcand/PoliBrasTest.git
 # Entrar na pasta
 PoliBrasTest
 # Criar um ambiente virtual
@@ -92,10 +95,6 @@ python manage.py migrate
 python manage.py createsuperuser
 # Rodar o servidor localmente
 python manage.py runserver
-ou
-docker-compose build
-docker-compose up
-
 ```	
 
 # API REST #
