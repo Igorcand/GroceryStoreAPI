@@ -72,7 +72,7 @@ Esse projeto foi desenvolvido a partir do processo seletivo para vaga de Back-En
 ### Banco de Dados ###
 - SQLite
 
-## COMO RODAR O PROJETO ##
+# COMO RODAR O PROJETO #
 ```bash
 # Clonar o repositorio
 git clone https://github.com/Igorcand
@@ -262,6 +262,55 @@ Na imagem abaixo está um JSON com todos os parâmetros disponíveis.
 
 #### ________________________________________________________________________________________________________________________________________________________ ####
 
+
+# Pytest #
+
+A framework  pytest facilita a escrita de testes pequenos e legíveis e pode ser dimensionada para oferecer suporte a testes funcionais complexos para aplicativos e bibliotecas.
+
+No projeto foi constuido testes para todas as rotas descritas na sessão anterior de sobre como utilizar a API do mercadinho. O intuito dos testes são avaliar as responses e os códigos de status, de chamadas que deveriam funcionar e também as que deveriam falhar.
+
+### COMO RODAR OS TESTES ###
+```bash
+# Estar na raiz do projeto
+/PoliBrasTest/
+# Setar as configurações do django
+set DJANGO_SETTINGS_MODULE=project.settings
+# Rodar os testes
+pytest
+```
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/pytest/tests.png)
+
+# REDIS #
+
+O Redis é um armazenamento de estrutura de dados de chave-valor de código aberto e na memória. O Redis oferece um conjunto de estruturas versáteis de dados na memória que permite a fácil criação de várias aplicações personalizadas. Os principais casos de uso do Redis incluem cache, gerenciamento de sessões, PUB/SUB e classificações.
+
+No projeto em particular, foi adicionado o mesmo End-Point para a visualização dos produtos utilizando o sistema de cache oferecido pelo Redis. Foi feito a mesma rota pra fins de comparação com o uso do cache e sem, pois com o cache a resposta é mais rápida porém a atualização não é instantânea.
+
+Para utilizar a rota com cache do Redis no projeto, você precisa necessáriamente de ter o servidor do Redis rodando localmente, na porta 6379.
+
+Para a instalação, siga o passo a passo descrito na documentação oficial.
+
+- <a href="https://redis.io/docs/getting-started/installation/install-redis-on-linux/" target="_blank">Linux</a>
+- <a href="https://redis.io/docs/getting-started/installation/install-redis-on-mac-os/" target="_blank">MacOS</a>
+- <a href="https://redis.io/docs/getting-started/installation/install-redis-on-windows/" target="_blank">Windows</a>
+
+Após a instalação, você deve iniciar o servidor. Você pode seguir os passos abaixo ou na própria documentação:
+- sudo apt-get update
+- sudo apt-get upgrade
+- sudo apt-get install redis-server
+- sudo service redis-server restart
+- redis-cli 
+- <a href="https://redis.io/docs/getting-started/" target="_blank">Getting started</a>
+
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/redis/redis_running.png)
+
+
+O End-Point contruido na aplicação é: 
+- https://localhost/api/products_cache/
+
+Para título de curiosidade, você poderá testar a rota adicionando um produto como descrito na sessão acima, e utilizar a rota acima, você verá que o produto recém adicionado não irá aparecer, e se você rodar a rota de visualizar todos os produtos, ele estará lá. Só após 60 segundos que seu produto irá aparecer na rota em que o cache do Redis está funcionando.
 
 
 # Author
