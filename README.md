@@ -348,6 +348,39 @@ Irá apresentar essa mensagem simples:
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/auth/have_authorization.png)
 
+
+# Docker #
+
+Docker é uma forma de virtualizar aplicações no conceito de “containers”, trazendo da web ou de seu repositório interno uma imagem completa, incluindo todas as dependências necessárias para executar sua aplicação.
+
+A aplicação uma segunda forma de funcionar que é a partir de imagem e containers do Docker, e para isso, você precisa ter o Docker instalado na sua máquina.
+
+<a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank">link para instalar</a>
+
+Para a criação de container e a imagem capaz de rodar a aplicação django, foi feita uma pesquisa na internet para achar o melhor modelo de imagem.
+
+### COMO RODAR PELO DOCKER ###
+```bash
+# Fazer o build da imagem
+docker-compose build
+# Rodar a aplicaçãp
+docker-compose up
+```
+
+#### Imagem criada ####
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/docker/build.png)
+
+#### Rodando a partir do Docker #####
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/docker/running.png)
+
+
+#### Observações ####
+Durante o desenvolvimento a partir da criação de containers, tive dificuldades em fazer as imagens comunicarem entre si. Apesar de ter conseguido buildar a imagem do Redis pelo docker com sucesso, o container não conseguia conectar na porta que o Redis estava funcionando localmente, então ao acessar a rota "/api/products_cache/" apresentará um erro, que é justamente a rejeição da tentativa de conexão. 
+Outro ponto em que tive dificuldades foi a conexão da aplicação em Django em se conectar com o banco de dados Postgres, da mesma forma que o Redis, consegui buildar a imagem com sucesso a partir do Docker, porém, a aplicação django não reconhecia as informações de username, password e host do própio banco de dados. Por esse motivo, foi optado em deixar a aplicação rodando com o banco de dados padrão, o SQLite.
+
+
 # Author
 
 Igor Cândido Rodrigues
