@@ -1,6 +1,61 @@
 # PoliBrasTest #
 ## Sobre o Projeto ## 
-Esse projeto foi desenvolvido a partir do processo seletivo para vaga de Back-End da empresa PoliBras Softwere. Como descrito no edital, o intuito da  aplicação é fazer uma API de gerenciamento de um pequeno mercadinho, utilizando o Django, um framework python, com as seguintes funcionalidades: Cadastro de produtos, Lançamento de vendas e Relatório de caixa.
+Esse projeto foi desenvolvido a partir do processo seletivo para vaga de Back-End da empresa PoliBras Softwere. Como descrito no edital, o intuito da aplicação é fazer uma API de gerenciamento de um pequeno mercadinho, utilizando o Django, um framework python, com as seguintes funcionalidades: Cadastro de produtos, Lançamento de vendas e Relatório de caixa.
+
+## Estrutura do projeto ##
+```bash
+|--PoliBrasTest/ (MAIN PACKAGE)
+|	|-- apps/ (PASTA DE APPS)
+|	|	|-- authorizarion/ (APP DJANGO)
+|	|	|	|-- apps.py
+|	|	|	|-- models.py
+|	|	|	|-- urls.py
+|	|	|	|-- views.py
+|	|	|-- products/ (APP DJANGO)
+|	|	|	|-- tests/ (PASTA PARA TESTES)
+|	|	|	|	|-- test_categories.py
+|	|	|	|	|-- test_products.py
+|	|	|	|-- admin.py
+|	|	|	|-- apps.py
+|	|	|	|-- models.py
+|	|	|	|-- serializers.py
+|	|	|	|-- urls.py
+|	|	|	|-- views.py
+|	|	|-- reports/ (APP DJANGO)
+|	|	|	|-- tests/ (PASTA PARA TESTES)
+|	|	|	|	|-- test_reports.py
+|	|	|	|-- admin.py
+|	|	|	|-- apps.py
+|	|	|	|-- models.py
+|	|	|	|-- serializers.py
+|	|	|	|-- urls.py
+|	|	|	|-- views.py
+|	|	|-- sales/ (APP DJANGO)
+|	|	|	|-- tests/ (PASTA PARA TESTES)
+|	|	|	|	|-- test_sales.py
+|	|	|	|-- admin.py
+|	|	|	|-- apps.py
+|	|	|	|-- models.py
+|	|	|	|-- serializers.py
+|	|	|	|-- urls.py
+|	|	|	|-- views.py
+|	|-- project/ (PROJECT DJANGO)	
+|	|	|-- asgi.py
+|	|	|-- settings.py
+|	|	|-- urls.py
+|	|	|-- wsgi.py
+|-- manage.py
+|-- requirements-dev.txt
+|-- requirements.txt
+|-- .gitignore
+|-- Dockerfile
+|-- docker-compose.yaml
+|-- LICENSE
+|-- pytest.ini
+|-- README.md
+
+
+```
 
 ## Tecnologias usadas ##
 ##### Back End #####
