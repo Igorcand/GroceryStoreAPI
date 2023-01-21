@@ -276,14 +276,14 @@ Para acessar a página, basta acessar a URL abaixo e fazer o login com o mesmo u
 
 - https://localhost/admin/
 
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/admin_home.png)
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/category_home.png)
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/add_category.png)
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/product_home.png)
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/add_product.png)
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/sale_home.png)
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/add_sale.png)
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/report_home.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/admin_home.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/category_home.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/add_category.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/product_home.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/add_product.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/sale_home.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/add_sale.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/report_home.png)
 
 
 # Swagger #
@@ -294,15 +294,15 @@ Para acessar a documentação, acesse a URL abaixo:
 
 - https://localhost/swagger/
 
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/swagger/swagger.png)
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/swagger/routes1.png)
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/swagger/routes2.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/swagger/swagger.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/swagger/routes1.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/swagger/routes2.png)
 
 Para acessar o redoc, acesse a URL abaixo:
 
 - https://localhost/redoc/
 
-![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/swagger/redoc.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/swagger/redoc.png)
 
 # Pytest #
 
