@@ -6,5 +6,4 @@ from .views import (
 
 urlpatterns = [
     path("authorization/", AuthorizationAPIView.as_view(), name="authorization"),
-
 ]

@@ -13,13 +13,13 @@ from .serializers import ReportsSerializers
 class ReportsAPIView(APIView):
     # permission_classes = (IsAuthenticated,)
 
-    @swagger_auto_schema(tags=['Report'])
+    @swagger_auto_schema(tags=["Report"])
     def get(self, request):
         reports = Reports.objects.all()
         serializer = ReportsSerializers(reports, many=True)
         return Response(serializer.data)
 
-    @swagger_auto_schema(request_body=ReportsSerializers, tags=['Report'])
+    @swagger_auto_schema(request_body=ReportsSerializers, tags=["Report"])
     def post(self, request):
         data = JSONParser().parse(request)
         if "data" in data.keys():

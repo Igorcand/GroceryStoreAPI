@@ -11,7 +11,7 @@ class Reports(models.Model):
     data = models.DateTimeField(null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = 'Reports'
+        verbose_name_plural = "Reports"
 
     def __str__(self):
         return f"{self.product} - {self.data}"

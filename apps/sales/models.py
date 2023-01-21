@@ -4,6 +4,7 @@ from decimal import Decimal
 from apps.products.models import Product
 from django.utils.timezone import now
 
+
 class Sale(models.Model):
     class PaymentsType(models.TextChoices):
         CREDIT_CARD = "Credit Card"
@@ -21,7 +22,13 @@ class Sale(models.Model):
         null=True,
         blank=True,
     )
-    payment = models.CharField(max_length=30, null=True, blank=True,  choices=PaymentsType.choices, default=PaymentsType.CREDIT_CARD)
+    payment = models.CharField(
+        max_length=30,
+        null=True,
+        blank=True,
+        choices=PaymentsType.choices,
+        default=PaymentsType.CREDIT_CARD,
+    )
 
     def __str__(self):
         return f"{self.product} x {self.quantity}"

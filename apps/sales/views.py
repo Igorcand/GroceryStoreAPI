@@ -17,13 +17,13 @@ from apps.reports.models import Reports
 class SaleAPIView(APIView):
     # permission_classes = (IsAuthenticated,)
 
-    @swagger_auto_schema(tags=['Sale'])
+    @swagger_auto_schema(tags=["Sale"])
     def get(self, request):
         sales = Sale.objects.all()
         serializer = SalesSerializer(sales, many=True)
         return Response(serializer.data)
 
-    @swagger_auto_schema(request_body=SalesSerializer, tags=['Sale'])
+    @swagger_auto_schema(request_body=SalesSerializer, tags=["Sale"])
     def post(self, request):
         data = JSONParser().parse(request)
         serializer = SalesSerializer(data=data)
@@ -36,8 +36,8 @@ class SaleAPIView(APIView):
             payment = serializer.validated_data.get("payment")
 
             product = Product.objects.get(name=product_name)
-            unit = product.unit 
-            if unit=='Item':
+            unit = product.unit
+            if unit == "Item":
                 quantity = int(quantity)
             else:
                 quantity = float(quantity)
