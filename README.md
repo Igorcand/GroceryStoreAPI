@@ -359,11 +359,13 @@ pytest
 - <a href="https://redis.io/docs/getting-started/installation/install-redis-on-windows/" target="_blank">Windows</a>
 
 <p> Após a instalação, você deve iniciar o servidor. Você pode seguir os passos abaixo ou na própria documentação: </p>
+
 - sudo apt-get update
 - sudo apt-get upgrade
 - sudo apt-get install redis-server
 - sudo service redis-server restart
 - redis-cli 
+
 - <a href="https://redis.io/docs/getting-started/" target="_blank">Getting started</a>
 
 
