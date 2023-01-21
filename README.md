@@ -1,6 +1,6 @@
 # PoliBrasTest #
 # Sobre o Projeto #
-Esse projeto foi desenvolvido a partir do processo seletivo para vaga de Back-End da empresa PoliBras Softwere. Como descrito no edital, o intuito da aplicação é fazer uma API de gerenciamento de um pequeno mercadinho, utilizando o Django, um framework python, com as seguintes funcionalidades: Cadastro de produtos, Lançamento de vendas e Relatório de caixa.
+<p> Esse projeto foi desenvolvido a partir do processo seletivo para vaga de Back-End da empresa PoliBras Softwere. Como descrito no edital, o intuito da aplicação é fazer uma API de gerenciamento de um pequeno mercadinho, utilizando o Django, um framework python, com as seguintes funcionalidades: Cadastro de produtos, Lançamento de vendas e Relatório de caixa. </p>
 
 # Estrutura do projeto #
 ```bash
@@ -283,19 +283,19 @@ pytest
 
 # REDIS #
 
-O Redis é um armazenamento de estrutura de dados de chave-valor de código aberto e na memória. O Redis oferece um conjunto de estruturas versáteis de dados na memória que permite a fácil criação de várias aplicações personalizadas. Os principais casos de uso do Redis incluem cache, gerenciamento de sessões, PUB/SUB e classificações.
+<p> O Redis é um armazenamento de estrutura de dados de chave-valor de código aberto e na memória. O Redis oferece um conjunto de estruturas versáteis de dados na memória que permite a fácil criação de várias aplicações personalizadas. Os principais casos de uso do Redis incluem cache, gerenciamento de sessões, PUB/SUB e classificações.</p>
 
-No projeto em particular, foi adicionado o mesmo End-Point para a visualização dos produtos utilizando o sistema de cache oferecido pelo Redis. Foi feito a mesma rota pra fins de comparação com o uso do cache e sem, pois com o cache a resposta é mais rápida porém a atualização não é instantânea.
+<p> No projeto em particular, foi adicionado o mesmo End-Point para a visualização dos produtos utilizando o sistema de cache oferecido pelo Redis. Foi feito a mesma rota pra fins de comparação com o uso do cache e sem, pois com o cache a resposta é mais rápida porém a atualização não é instantânea.</p>
 
-Para utilizar a rota com cache do Redis no projeto, você precisa necessáriamente de ter o servidor do Redis rodando localmente, na porta 6379.
+<p> Para utilizar a rota com cache do Redis no projeto, você precisa necessáriamente de ter o servidor do Redis rodando localmente, na porta 6379. </p>
 
-Para a instalação, siga o passo a passo descrito na documentação oficial.
+<p> Para a instalação, siga o passo a passo descrito na documentação oficial. </p>
 
 - <a href="https://redis.io/docs/getting-started/installation/install-redis-on-linux/" target="_blank">Linux</a>
 - <a href="https://redis.io/docs/getting-started/installation/install-redis-on-mac-os/" target="_blank">MacOS</a>
 - <a href="https://redis.io/docs/getting-started/installation/install-redis-on-windows/" target="_blank">Windows</a>
 
-Após a instalação, você deve iniciar o servidor. Você pode seguir os passos abaixo ou na própria documentação:
+<p> Após a instalação, você deve iniciar o servidor. Você pode seguir os passos abaixo ou na própria documentação: </p>
 - sudo apt-get update
 - sudo apt-get upgrade
 - sudo apt-get install redis-server
@@ -310,15 +310,15 @@ Após a instalação, você deve iniciar o servidor. Você pode seguir os passos
 O End-Point contruido na aplicação é: 
 - https://localhost/api/products_cache/ (MÉTODO HTTP GET)
 
-Para título de curiosidade, você poderá testar a rota adicionando um produto como descrito na sessão acima, e utilizar a rota acima, você verá que o produto recém adicionado não irá aparecer, e se você rodar a rota de visualizar todos os produtos, ele estará lá. Só após 60 segundos que seu produto irá aparecer na rota em que o cache do Redis está funcionando.
+<p> Você poderá testar a rota adicionando um produto como descrito na sessão acima, e utilizar a rota acima, você verá que o produto recém adicionado não irá aparecer, e se você rodar a rota de visualizar todos os produtos, ele estará lá. Só após 60 segundos que seu produto irá aparecer na rota em que o cache do Redis está funcionando. </p>
 
 # Autenticação JWT #
 
-JWT (JSON Web Token) é um método RCT 7519 padrão da indústria para realizar autenticação entre duas partes por meio de um token assinado que autentica uma requisição web. Esse token é um código em Base64 que armazena objetos JSON com os dados que permitem a autenticação da requisição.
+<p> JWT (JSON Web Token) é um método RCT 7519 padrão da indústria para realizar autenticação entre duas partes por meio de um token assinado que autentica uma requisição web. Esse token é um código em Base64 que armazena objetos JSON com os dados que permitem a autenticação da requisição.</p>
 
-Para fazer essa autenticação por token foi usado a biblioteca djangorestframework-simplejwt na sua versão 5.2.2 e com sua implementação vem duas rotas para isso, a de geração do token e o refresh do token.
+<p> Para fazer essa autenticação por token foi usado a biblioteca djangorestframework-simplejwt na sua versão 5.2.2 e com sua implementação vem duas rotas para isso, a de geração do token e o refresh do token. </p>
 
-Para gerar o token, você precisa necessariamente de ser super usuário, e então você passa o nome de usuário e a senha na rota abaixo:
+<p> Para gerar o token, você precisa necessariamente de ser super usuário, e então você passa o nome de usuário e a senha na rota abaixo: </p>
 - https://localhost/token/ (MÉTODO HTTP POST)
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/auth/create_token.png)
@@ -328,7 +328,7 @@ Para gerar um novo token utilizando o refresh, basta passar o refresh token como
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/auth/refresh.png)
 
-Durante o processo de desenvolvimento da aplicação, ocorreu um erro de integração de tecnologias ao usar a autenticação JWT e os testes, pois sempre que a autenticação das rotas estava ativa, os testes não conseguiam testar as rotas por causa de justamente não terem o token para enviar. Com isso, foi criado uma rota simples para mostrar o funcionamento da autenticação.
+<p> Durante o processo de desenvolvimento da aplicação, ocorreu um erro de integração de tecnologias ao usar a autenticação JWT e os testes, pois sempre que a autenticação das rotas estava ativa, os testes não conseguiam testar as rotas por causa de justamente não terem o token para enviar. Com isso, foi criado uma rota simples para mostrar o funcionamento da autenticação. </p>
 
 - https://localhost/api/authorization/ (MÉTODO HTTP GET)
 
@@ -377,7 +377,8 @@ docker-compose up
 
 
 #### Observações ####
-Durante o desenvolvimento a partir da criação de containers, tive dificuldades em fazer as imagens comunicarem entre si. Apesar de ter conseguido buildar a imagem do Redis pelo docker com sucesso, o container não conseguia conectar na porta que o Redis estava funcionando localmente, então ao acessar a rota "/api/products_cache/" apresentará um erro, que é justamente a rejeição da tentativa de conexão. 
+Durante o desenvolvimento a partir da criação de containers, tive dificuldades em fazer as imagens comunicarem entre si. Apesar de ter conseguido buildar a imagem do Redis pelo docker com sucesso, o container não conseguia conectar na porta que o Redis estava funcionando localmente, então ao acessar a rota "/api/products_cache/" apresentará um erro, que é justamente a rejeição da tentativa de conexão.
+
 Outro ponto em que tive dificuldades foi a conexão da aplicação em Django em se conectar com o banco de dados Postgres, da mesma forma que o Redis, consegui buildar a imagem com sucesso a partir do Docker, porém, a aplicação django não reconhecia as informações de username, password e host do própio banco de dados. Por esse motivo, foi optado em deixar a aplicação rodando com o banco de dados padrão, o SQLite.
 
 
