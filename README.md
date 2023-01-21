@@ -100,15 +100,15 @@ docker-compose up
 	
 # FUNCIONALIDADES #
 
-# API REST # outras
+# API REST #
 Para a utilização da API REST do mercadinho, foi feito um CRUD para as tabelas do banco de dados mais importantes, e outras apenas rotas de GET e POST.
 
 ## Categoria ##
 Para lançar as categorias dos produtos do seu mercadinho, voce deve utilizar as rotas com o End-Point:
 - /api/categories/
 
-### Como usar ###
 
+#### ________________________________________________________________________________________________________________________________________________________ ####
 #### Visualizar categorias ####
 Para visualizar as categorias cadastradas você deve utilizar o método HTTP GET no End-Point abaixo para visualizar todos as categorias cadastradas
 - http://localhost/api/categories/ (MÉTODO HTTP GET) 
@@ -121,12 +121,15 @@ Caso deseje visualizar apenas uma categoria específica, você poderá adicionar
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/categories/get-category_by_id.png)
 
+#### ________________________________________________________________________________________________________________________________________________________ ####
+
 #### Adicionar categorias ####
 Para adicionar categorias você deve utilizar o End-Point principal descrito acima e passar um JSON com os parametros necessários para o cadastramento.
 - http://localhost/api/categories/ (MÉTODO HTTP POST)
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/categories/post_save_category.png)
 
+#### ________________________________________________________________________________________________________________________________________________________ ####
 
 #### Deletar categorias ####
 Para deletar categorias existentes você deve utilizar o End-Point principal, passando na URL o ID da categoria específica ue deseja deletar
@@ -140,13 +143,14 @@ OBS: Só é possivel deletar categorias existentes, caso a categoria passada nã
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/categories/delete_category_using.png)
 
-# -------- #
+
+#### ________________________________________________________________________________________________________________________________________________________ ####
 
 ## Produtos ##
 Para lançar os produtos no seu mercadinho, voce deve utilizar as rotas com o End-Point:
 - /api/products/
 
-### Como usar ###
+#### ________________________________________________________________________________________________________________________________________________________ ####
 
 #### Visualizar produtos ####
 Para visualizar os produtos cadastrados você deve utilizar o método HTTP GET no End-Point acima para visualizar todos os produtos cadastrados
@@ -159,6 +163,8 @@ Caso deseje visualizar apenas um produto, você poderá adicionar o ID no final 
 - http://localhost/api/products/{ID}/ (MÉTODO HTTP GET)
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/products/get_product_id.png)
+
+#### ________________________________________________________________________________________________________________________________________________________ ####
 
 #### Adicionar produtos ####
 Para adicionar produtos você deve utilizar o End-Point principal descrito acima e passar um JSON com os parametros necessários para o cadastramento.
@@ -174,6 +180,7 @@ OBS: O cadastramento de produtos só é possivel para um produto novo, caso o pr
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/products/erro_save_product_already_exist.png)
 
+#### ________________________________________________________________________________________________________________________________________________________ ####
 
 #### Atualizar produtos ####
 Para atualizar os produtos existentes você deve utilizar o End-Point principal, passando na URL o ID do produto específico que deseja atualizar, descrito acima e passar um JSON com os parametros necessários para o cadastramento.
@@ -185,6 +192,8 @@ OBS: A atualização de produtos só é possivel tendo um produto já cadastrado
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/products/erro_update_noneexiting_product.png)
 
+#### ________________________________________________________________________________________________________________________________________________________ ####
+
 #### Deletar produtos ####
 Para deletar os produtos existentes você deve utilizar o End-Point principal, passando na URL o ID do produto específico que deseja deletar
 - http://localhost/api/products/{ID}/ (MÉTODO HTTP DELETE)
@@ -193,19 +202,22 @@ OBS: Para deletar produtos só é possivel tendo um produto já cadastrado no ba
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/products/erro_delete_nonexisting_product.png)
 
-# -------- #
+#### ________________________________________________________________________________________________________________________________________________________ ####
+
 
 ## Vendas ##
 Para lançar as vendas  do seu mercadinho, voce deve utilizar as rotas com o End-Point:
 - /api/sales/
 
-### Como usar ###
+#### ________________________________________________________________________________________________________________________________________________________ ####
 
 #### Visualizar vendas ####
 Para visualizar as vendas que aconteceram você deve utilizar o método HTTP GET no End-Point acima para visualizar todas as vendas cadastradas.
 - http://localhost/api/sales/ (MÉTODO HTTP GET) 
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/sales/get_sales.png)
+
+#### ________________________________________________________________________________________________________________________________________________________ ####
 
 #### Adicionar vendas ####
 Para adicionar as vendas você deve utilizar o End-Point principal descrito acima e passar um JSON com os parametros necessários para o lançamento de vendas
@@ -221,19 +233,22 @@ OBS: O lançamento de vendas só é possivel caso o produto tenha estoque sufici
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/sales/error_buy_more_than_stock.png)
 
-# -------- #
+#### ________________________________________________________________________________________________________________________________________________________ ####
 
 ## Relatórios ##
 Para lançar as vendas  do seu mercadinho, voce deve utilizar as rotas com o End-Point:
 - /api/sales/
 
-### Como usar ###
+#### ________________________________________________________________________________________________________________________________________________________ ####
+
 
 #### Visualizar relatórios ####
 Para visualizar todos os relatórios que aconteceram você deve utilizar o método HTTP GET no End-Point acima para visualizar todas as vendas cadastradas.
 - http://localhost/api/reports/ (MÉTODO HTTP GET) 
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/reports/get_all_reports.png)
+
+#### ________________________________________________________________________________________________________________________________________________________ ####
 
 #### Filtrar relatórios ####
 Para filtrar os relatórios você deve utilizar o End-Point principal descrito acima e passar um JSON com os parametros que você deseja filtrar, como data, pagamento, produto, etc. 
@@ -245,7 +260,7 @@ Na imagem abaixo está um JSON com todos os parâmetros disponíveis.
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/reports/json_filtring_report.png)
 
-# -------- #
+#### ________________________________________________________________________________________________________________________________________________________ ####
 
 
 
