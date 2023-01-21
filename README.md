@@ -277,17 +277,39 @@ Para acessar a página, basta acessar a URL abaixo e fazer o login com o mesmo u
 - https://localhost/admin/
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/admin_home.png)
+
+##### ___________________________________________________________________________________________________________________________________#####
+
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/category_home.png)
+
+##### ___________________________________________________________________________________________________________________________________#####
+
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/add_category.png)
+
+##### ___________________________________________________________________________________________________________________________________#####
+
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/product_home.png)
+
+##### ___________________________________________________________________________________________________________________________________#####
+
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/add_product.png)
+
+##### ___________________________________________________________________________________________________________________________________#####
+
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/sale_home.png)
+
+##### ___________________________________________________________________________________________________________________________________#####
+
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/add_sale.png)
+
+##### ___________________________________________________________________________________________________________________________________#####
+
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/admin/report_home.png)
 
 
 # Swagger #
 O Swagger é um framework composto por diversas ferramentas que, independente da linguagem, auxilia a descrição, consumo e visualização de serviços de uma API REST. 
+
 Foi usado a biblioteca drf-yasg na sua versão 1.21.4 para construir a documentação da API, como mostra abaixo.
 
 Para acessar a documentação, acesse a URL abaixo:
