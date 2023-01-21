@@ -264,6 +264,45 @@ Na imagem abaixo está um JSON com todos os parâmetros disponíveis.
 
 #### ________________________________________________________________________________________________________________________________________________________ ####
 
+# Admin #
+
+<code>
+Uma das partes mais poderosas do Django é a interface de administração automática. Ele lê metadados de seus modelos para fornecer uma interface rápida e centrada no modelo, onde usuários confiáveis ​​podem gerenciar o conteúdo em seu site. O uso recomendado do administrador é limitado à ferramenta de gerenciamento interno de uma organização. Não se destina a construir todo o seu front-end.
+
+O administrador tem muitos ganchos para personalização, mas cuidado ao tentar usar esses ganchos exclusivamente. Se você precisar fornecer uma interface mais centrada no processo que abstraia os detalhes de implementação de tabelas e campos do banco de dados, provavelmente é hora de escrever suas próprias exibições.
+</code>
+
+Para acessar a página, basta acessar a URL abaixo e fazer o login com o mesmo usuário e senha do seu super usuário.
+
+- https://localhost/admin/
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/admin_home.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/category_home.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/add_category.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/product_home.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/add_product.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/sale_home.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/add_sale.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/admin/report_home.png)
+
+
+# Swagger #
+O Swagger é um framework composto por diversas ferramentas que, independente da linguagem, auxilia a descrição, consumo e visualização de serviços de uma API REST. 
+Foi usado a biblioteca drf-yasg na sua versão 1.21.4 para construir a documentação da API, como mostra abaixo.
+
+Para acessar a documentação, acesse a URL abaixo:
+
+- https://localhost/swagger/
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/swagger/swagger.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/swagger/routes1.png)
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/swagger/routes2.png)
+
+Para acessar o redoc, acesse a URL abaixo:
+
+- https://localhost/redoc/
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/api/swagger/redoc.png)
 
 # Pytest #
 
