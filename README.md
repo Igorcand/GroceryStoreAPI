@@ -308,10 +308,45 @@ Após a instalação, você deve iniciar o servidor. Você pode seguir os passos
 
 
 O End-Point contruido na aplicação é: 
-- https://localhost/api/products_cache/
+- https://localhost/api/products_cache/ (MÉTODO HTTP GET)
 
 Para título de curiosidade, você poderá testar a rota adicionando um produto como descrito na sessão acima, e utilizar a rota acima, você verá que o produto recém adicionado não irá aparecer, e se você rodar a rota de visualizar todos os produtos, ele estará lá. Só após 60 segundos que seu produto irá aparecer na rota em que o cache do Redis está funcionando.
 
+# Autenticação JWT #
+
+JWT (JSON Web Token) é um método RCT 7519 padrão da indústria para realizar autenticação entre duas partes por meio de um token assinado que autentica uma requisição web. Esse token é um código em Base64 que armazena objetos JSON com os dados que permitem a autenticação da requisição.
+
+Para fazer essa autenticação por token foi usado a biblioteca djangorestframework-simplejwt na sua versão 5.2.2 e com sua implementação vem duas rotas para isso, a de geração do token e o refresh do token.
+
+Para gerar o token, você precisa necessariamente de ser super usuário, e então você passa o nome de usuário e a senha na rota abaixo:
+- https://localhost/token/ (MÉTODO HTTP POST)
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/auth/create_token.png)
+
+Para gerar um novo token utilizando o refresh, basta passar o refresh token como parâmetro de entrada na rota abaixo: 
+- https://localhost/refresh/ (MÉTODO HTTP POST)
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/auth/refresh.png)
+
+Durante o processo de desenvolvimento da aplicação, ocorreu um erro de integração de tecnologias ao usar a autenticação JWT e os testes, pois sempre que a autenticação das rotas estava ativa, os testes não conseguiam testar as rotas por causa de justamente não terem o token para enviar. Com isso, foi criado uma rota simples para mostrar o funcionamento da autenticação.
+
+- https://localhost/api/authorization/ (MÉTODO HTTP GET)
+
+Caso você tente executar essa rota sem enviar o token no Header da requisição, irá apresentar erro:
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/auth/without_auth.png)
+
+Caso você tente executar essa rota sem enviar o token válido, irá apresentar erro:
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/auth/token_not_valid.png)
+
+Caso envie o token dessa maneira:
+
+Header = {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc0MzEyMTQwLCJpYXQiOjE2NzQzMTE4NDAsImp0aSI6ImI4NmYyMTVmZGYzNTQzOTRhNmUzMDM1NWZkNTY2ZjhiIiwidXNlcl9pZCI6MX0.T-1bg-5sVZ_4B8VHjdG5MIOYc6WsDxEnLovyPbAXj8g"}
+
+Irá apresentar essa mensagem simples:
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/auth/have_authorization.png)
 
 # Author
 
