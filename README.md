@@ -1,8 +1,8 @@
 # PoliBrasTest #
-## Sobre o Projeto ## 
+# Sobre o Projeto #
 Esse projeto foi desenvolvido a partir do processo seletivo para vaga de Back-End da empresa PoliBras Softwere. Como descrito no edital, o intuito da aplicação é fazer uma API de gerenciamento de um pequeno mercadinho, utilizando o Django, um framework python, com as seguintes funcionalidades: Cadastro de produtos, Lançamento de vendas e Relatório de caixa.
 
-## Estrutura do projeto ##
+# Estrutura do projeto #
 ```bash
 |--PoliBrasTest/ (MAIN PACKAGE)
 |	|-- apps/ (PASTA DE APPS)
@@ -54,93 +54,194 @@ Esse projeto foi desenvolvido a partir do processo seletivo para vaga de Back-En
 |-- pytest.ini
 |-- README.md
 
-
 ```
 
-## Tecnologias usadas ##
-##### Back End #####
+# Relacionamento de tabelas do Banco de Dados #
+
+imagem do dbdiagram
+
+
+# Tecnologias usadas #
+### Back End ###
 - Python
 - Django
 - Django Rest Framework
 - Docker
 - Redis
 - Pytest
-##### Banco de Dados #####
+### Banco de Dados ###
 - SQLite
 
-## FUNCIONALIDADES ##
-[[[[[[[
-
-
-FOTOS E DESCRIÇÃO DAS ROTAS, E MOSTRAR AS TECNOLIGIAS FUNCIONANDO
-
-
-REDIS:
-
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install redis-server
-sudo service redis-server restart
-redis-cli 
-
-RODAR LOCALMENTE 
-
-python -m venv venv
-venv/Script/activate.bat
-pip install -r requirements
-
-PYTEST:
-set DJANGO_SETTINGS_MODULE=project.settings
-pytest
-
-
-]]]]]]]
-
-
-## Como este projeto foi desenvolvido ##
-Esse projeto apresenta todas as funcionalidades descritas no edital e mais algumas tecnologias sugeridas, como o Docker, Django Rest Framework, Django Admin,  Redis, Swagger, Postman. Inicialmente foi feito a API inteiramente com o DRF, validando os Models, Serializers e Views, buscando usar o método de CBV (Class Based View). Depois disso, foi feito o cadastro dos Models no Django-Admin e customizando de forma simples as tabelas. Após a API estar toda  funcionalmente rodando foi feito os testes utilizando a bibliteca Pytest, sempre validando as Responses, Status code e os erros esperados de cada rota. Foi adicionado o Redis para serviços de cache. Segurança na rota utilizando o token JWT. Documentação da API utilizando o Swagger 
-OBS: Por causa da autenticação JWT nas rotas, ao rodar os testes para simular requisições estava obtendo um erro de não autorizado mesmo tentando passar o token  no Header da requisição. Então foi optado em retirar a autenticação das rotas principais e criar uma rota chamada '/api/authorization/' que não está sendo utilizada nos testes, então a rota autenticada poderá ser testada utilizando o Postman, Insoimina, ou outra plataforma. 
------------
-Probelmas ao usar o Docker:
-DOCKER: Adicionado o Docker e o arquivo de docker-compose para a facilitação ao rodar o container.
-OBS: Não consegui fazer o docker rodar o banco de dados Postgres, segui tutoriais no youtube e documentação oficial mas sempre obtinha erro de permissão ao conectar no banco.
-OBS2: Não consegui fazer o docker conectar ao servidor do Regis, apenas rodando localmente sem utilizar containers
------
-
-## REQUISITOS ##
-### REQUISITOS OBRIGATÓRIO ###
-- python 3 instalado na máquina, para a instalação do python segue o link (.....)
-### REQUISITOS FACULTATIVOS ###
- - Docker, para a instalação do docker segue o link (.....)
- - Redis, para a instalação do redis segue o link (.....), caso voce utilize Windows, poderá seguir o video (......)
-
 ## COMO RODAR O PROJETO ##
+```bash
+# Clonar o repositorio
+git clone https://github.com/Igorcand
+# Entrar na pasta
+PoliBrasTest
+# Criar um ambiente virtual
+python -m venv venv
+# Ativar o ambiente virtual
+ /PoliBrasTest/venv/Script/activate.bat
+# Voltar para raiz do projeto
+/PoliBrasTest/
+# Instalar os pacotes necessários
+pip install -r requirements.txt
+# Criar o banco de dados
+python manage.py migrate
+# Criar um super usuário
+python manage.py createsuperuser
+# Rodar o servidor localmente
+python manage.py runserver
+ou
+docker-compose build
+docker-compose up
 
-1 Clonar o repositorio (.....)
-	- git clone https://github.com/Igorcand
-2 Entrar na pasta
-	- PoliBrasTest
-3 Criar um ambiente virtual
-	- python -m venv venv
-4 Ativar o ambiente virtual
-	- /PoliBrasTest/venv/Script/activate.bat
-5 Voltar para raiz do projeto
-	- /PoliBrasTest/
-6 Instalar os pacotes necessários
-	- pip install -r requirements.txt
-7 Criar o banco de dados
-	- python manage.py migrate
-8 Criar um super usuário
-	- python manage.py createsuperuser
-9 Rodar o servidor localmente
-	- python manage.py runserver
-	ou
-	- docker-compose build
-	- docker-compose up
+```
 	
+# FUNCIONALIDADES #
+
+# API REST # outras
+Para a utilização da API REST do mercadinho, foi feito um CRUD para as tabelas do banco de dados mais importantes, e outras apenas rotas de GET e POST.
+
+## Categoria ##
+Para lançar as categorias dos produtos do seu mercadinho, voce deve utilizar as rotas com o End-Point:
+- /api/categories/
+
+### Como usar ###
+
+#### Visualizar categorias ####
+Para visualizar as categorias cadastradas você deve utilizar o método HTTP GET no End-Point abaixo para visualizar todos os produtos cadastrados
+- http://localhost/api/categories/ (MÉTODO HTTP GET) 
+
+(IMAGEM)
+
+Caso deseje visualizar apenas uma categoria específica, você poderá adicionar o ID no final do End-Point.
+
+- http://localhost/api/categories/{ID}/ (MÉTODO HTTP GET)
+
+(IMAGEM)
+
+#### Adicionar categorias ####
+Para adicionar categorias você deve utilizar o End-Point principal descrito acima e passar um JSON com os parametros necessários para o cadastramento.
+- http://localhost/api/categories/ (MÉTODO HTTP POST)
+
+(IMAGEM DO JSON)
+
+
+#### Deletar categorias ####
+Para deletar categorias existentes você deve utilizar o End-Point principal, passando na URL o ID da categoria específica ue deseja deletar
+- http://localhost/api/categories/{ID}/ (MÉTODO HTTP DELETE)
+
+OBS: Só é possivel deletar categorias existentes, caso o ID passado não exista você será avisado.
+
+(IMAGEM)
+
+OBS: Só é possivel deletar categorias existentes, caso a categoria passada não esteja em uso por algum produto, caso tenha, você será avisado.
+
+(IMAGEM)
+
+# -------- #
+
+## Produtos ##
+Para lançar os produtos no seu mercadinho, voce deve utilizar as rotas com o End-Point:
+- /api/products/
+
+### Como usar ###
+
+#### Visualizar produtos ####
+Para visualizar os produtos cadastrados você deve utilizar o método HTTP GET no End-Point acima para visualizar todos os produtos cadastrados
+- http://localhost/api/products/ (MÉTODO HTTP GET)
+
+(IMAGEM)
+
+Caso deseje visualizar apenas um produto, você poderá adicionar o ID no final do End-Point.
+
+- http://localhost/api/products/{ID}/ (MÉTODO HTTP GET)
+
+(IMAGEM)
+
+#### Adicionar produtos ####
+Para adicionar produtos você deve utilizar o End-Point principal descrito acima e passar um JSON com os parametros necessários para o cadastramento.
+- http://localhost/api/products/ (MÉTODO HTTP POST)
+
+(IMAGEM DO JSON)
+
+OBS: O cadastramento de produtos só é possivel tendo um categoria já cadastrado no banco de dados, caso não tenha, voce será avisado.
+
+(IMAGEM)
+
+#### Atualizar produtos ####
+Para atualizar os produtos existentes você deve utilizar o End-Point principal, passando na URL o ID do produto específico que deseja atualizar, descrito acima e passar um JSON com os parametros necessários para o cadastramento.
+- http://localhost/api/products/{ID}/ (MÉTODO HTTP PUT)
+
+(IMAGEM DO JSON)
+
+OBS: A atualização de produtos só é possivel tendo um produto já cadastrado no banco de dados, caso não tenha, voce será avisado.
+(IMAGEM)
+
+#### Deletar produtos ####
+Para deletar os produtos existentes você deve utilizar o End-Point principal, passando na URL o ID do produto específico que deseja deletar
+- http://localhost/api/products/{ID}/ (MÉTODO HTTP DELETE)
+
+OBS: Para deletar produtos só é possivel tendo um produto já cadastrado no banco de dados, caso não tenha, voce será avisado.
+(IMAGEM)
+
+# -------- #
+
+## Vendas ##
+Para lançar as vendas  do seu mercadinho, voce deve utilizar as rotas com o End-Point:
+- /api/sales/
+
+### Como usar ###
+
+#### Visualizar vendas ####
+Para visualizar as vendas que aconteceram você deve utilizar o método HTTP GET no End-Point acima para visualizar todas as vendas cadastradas.
+- http://localhost/api/sales/ (MÉTODO HTTP GET) 
+
+(IMAGEM)
+
+#### Adicionar vendas ####
+Para adicionar as vendas você deve utilizar o End-Point principal descrito acima e passar um JSON com os parametros necessários para o lançamento de vendas
+- http://localhost/api/sales/ (MÉTODO HTTP POST)
+
+(IMAGEM DO JSON)
+
+OBS: O lançamento de vendas só é possivel tendo um produto já cadastrado no banco de dados, caso não tenha, voce será avisado.
+
+(IMAGEM)
+
+OBS: O lançamento de vendas só é possivel caso o produto tenha estoque suficiente para a sua compra
+
+(IMAGEM)
+
+# -------- #
+
+## Relatórios ##
+Para lançar as vendas  do seu mercadinho, voce deve utilizar as rotas com o End-Point:
+- /api/sales/
+
+### Como usar ###
+
+#### Visualizar relatórios ####
+Para visualizar todos os relatórios que aconteceram você deve utilizar o método HTTP GET no End-Point acima para visualizar todas as vendas cadastradas.
+- http://localhost/api/reports/ (MÉTODO HTTP GET) 
+
+(IMAGEM)
+
+#### Filtrar relatórios ####
+Para filtrar os relatórios você deve utilizar o End-Point principal descrito acima e passar um JSON com os parametros que você deseja filtrar, como data, pagamento, produto, etc. Na imagem abaixo está um JSON com todos os parâmetros disponíveis.
+- http://localhost/api/reports/ (MÉTODO HTTP POST)
+
+(IMAGEM)
+
+
+# -------- #
 
 
 
+# Author
 
+Igor Cândido Rodrigues
 
+https://www.linkedin.com/in/igorc%C3%A2ndido/
 
