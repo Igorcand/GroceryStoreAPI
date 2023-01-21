@@ -13,12 +13,14 @@ from .serializers import CategorySerializer, ProductsSerializer
 
 class ProductAPIView(APIView):
     # permission_classes = (IsAuthenticated,)
+
+    @swagger_auto_schema(tags=['Product'])
     def get(self, request):
         produtos = Product.objects.all()
         serializer = ProductsSerializer(produtos, many=True)
         return Response(serializer.data)
 
-    @swagger_auto_schema(request_body=ProductsSerializer)
+    @swagger_auto_schema(request_body=ProductsSerializer, tags=['Product'])
     def post(self, request):
         data = JSONParser().parse(request)
         serializer = ProductsSerializer(data=data)
@@ -51,18 +53,20 @@ class ProductAPIView(APIView):
 class ProductDetailAPIView(APIView):
     # permission_classes = (IsAuthenticated,)
 
+    @swagger_auto_schema(tags=['Product'])
     def get_object(self, pk):
         try:
             return Product.objects.get(pk=pk)
         except Product.DoesNotExist:
             raise APIException("This product doesn't exist")
 
+    @swagger_auto_schema(tags=['Product'])
     def get(self, request, pk, format=None):
         product = self.get_object(pk)
         serializer = ProductsSerializer(product)
         return Response(serializer.data)
 
-    @swagger_auto_schema(request_body=ProductsSerializer)
+    @swagger_auto_schema(request_body=ProductsSerializer, tags=['Product'])
     def put(self, request, pk, format=None):
         product = self.get_object(pk)
         serializer = ProductsSerializer(product, data=request.data)
@@ -80,6 +84,7 @@ class ProductDetailAPIView(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    @swagger_auto_schema(tags=['Product'])
     def delete(self, request, pk, format=None):
         product = self.get_object(pk)
         product.delete()
@@ -88,13 +93,13 @@ class ProductDetailAPIView(APIView):
 
 class CategoryAPIView(APIView):
     # permission_classes = (IsAuthenticated,)
-
+    @swagger_auto_schema(tags=['Category'])
     def get(self, request):
         produtos = Category.objects.all()
         serializer = CategorySerializer(produtos, many=True)
         return Response(serializer.data)
 
-    @swagger_auto_schema(request_body=CategorySerializer)
+    @swagger_auto_schema(request_body=CategorySerializer, tags=['Category'])
     def post(self, request):
         data = JSONParser().parse(request)
         serializer = CategorySerializer(data=data)
@@ -107,17 +112,20 @@ class CategoryAPIView(APIView):
 class CategoryDetailAPIView(APIView):
     # permission_classes = (IsAuthenticated,)
 
+    @swagger_auto_schema(tags=['Category'])
     def get_object(self, pk):
         try:
             return Category.objects.get(pk=pk)
         except Category.DoesNotExist:
             raise APIException("This category doesn't exist")
 
+    @swagger_auto_schema(tags=['Category'])
     def get(self, request, pk, format=None):
         category = self.get_object(pk)
         serializer = CategorySerializer(category)
         return Response(serializer.data)
 
+    @swagger_auto_schema(tags=['Category'])
     def delete(self, request, pk, format=None):
         category = self.get_object(pk)
         try:

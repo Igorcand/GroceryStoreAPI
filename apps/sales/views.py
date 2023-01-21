@@ -17,12 +17,13 @@ from apps.reports.models import Reports
 class SaleAPIView(APIView):
     # permission_classes = (IsAuthenticated,)
 
+    @swagger_auto_schema(tags=['Sale'])
     def get(self, request):
         sales = Sale.objects.all()
         serializer = SalesSerializer(sales, many=True)
         return Response(serializer.data)
 
-    @swagger_auto_schema(request_body=SalesSerializer)
+    @swagger_auto_schema(request_body=SalesSerializer, tags=['Sale'])
     def post(self, request):
         data = JSONParser().parse(request)
         serializer = SalesSerializer(data=data)
