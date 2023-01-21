@@ -445,7 +445,7 @@ Durante o desenvolvimento a partir da criação de containers, tive dificuldades
 Outro ponto em que tive dificuldades foi a conexão da aplicação em Django em se conectar com o banco de dados Postgres, da mesma forma que o Redis, consegui buildar a imagem com sucesso a partir do Docker, porém, a aplicação django não reconhecia as informações de username, password e host do própio banco de dados. Por esse motivo, foi optado em deixar a aplicação rodando com o banco de dados padrão, o SQLite.
 
 
-# Author
+# Autor
 
 Igor Cândido Rodrigues
 
