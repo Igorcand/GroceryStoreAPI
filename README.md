@@ -7,7 +7,7 @@
 
 # Estrutura do projeto #
 ```bash
-|--PoliBrasTest/ (MAIN PACKAGE)
+|--PoliBrasTest/ (APLICAÇÃO PRINCIPAL)
 |	|-- apps/ (PASTA DE APPS)
 |	|	|-- authorizarion/ (APP DJANGO)
 |	|	|	|-- apps.py
@@ -42,6 +42,16 @@
 |	|	|	|-- serializers.py
 |	|	|	|-- urls.py
 |	|	|	|-- views.py
+|	|-- assets/ (PASTA DE IMAGENS)
+|	|	|-- admin/ (IMAGENS DO DJANGO-ADMIN)
+|	|	|-- api/ (IMAGENS DO FUNCIONAMENTO DAS ROTAS)
+|	|	|-- auth/ (IMAGENS DA AUTENTICAÇÃO)
+|	|	|-- celery/ (IMAGENS DO CELERY)
+|	|	|-- database/ (IMAGENS DO RELECIONAMENTO DAS TABELAS)
+|	|	|-- docker/ (IMAGENS DO DOCKER)
+|	|	|-- pytest/ (IMAGENS DOS TESTES EXECUTADOS)
+|	|	|-- redis/ (IMAGENS DO REDIS)
+|	|	|-- swagger/ (IMAGENS DA DOCUMENTAÇÃO SWAGGER)
 |	|-- project/ (PROJECT DJANGO)	
 |	|	|-- asgi.py
 |	|	|-- settings.py
