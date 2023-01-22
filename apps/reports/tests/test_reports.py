@@ -10,8 +10,6 @@ from apps.products.models import Product, Category
 # set DJANGO_SETTINGS_MODULE=project.settings
 
 reports_url = reverse("reports")
-# sales_url = reverse("sales_url")
-
 
 pytestmark = pytest.mark.django_db
 

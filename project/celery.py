@@ -22,4 +22,3 @@ def debug_task(self):
 
 
 # celery -A project.celery worker --pool=solo -l info
-# celery -A project beat -l info 
