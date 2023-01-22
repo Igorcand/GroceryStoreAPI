@@ -418,7 +418,7 @@ Utilizando a biblioteca django-celery-results nos podemos ver o resultado das ta
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/celery/celery_admin.png)
 
-A se clicarmos em "Tasks results" podemos ver mais informações sobre a tarefa executada que antes eram omitidas.
+A se clicarmos em "Task results" podemos ver mais informações sobre a tarefa executada que antes eram omitidas.
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/celery/tasks.png)
 
