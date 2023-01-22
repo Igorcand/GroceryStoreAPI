@@ -377,6 +377,44 @@ O End-Point contruido na aplicação é:
 
 <p> Você poderá testar a rota adicionando um produto como descrito na sessão acima, e utilizar a rota acima, você verá que o produto recém adicionado não irá aparecer, e se você rodar a rota de visualizar todos os produtos, ele estará lá. Só após 60 segundos que seu produto irá aparecer na rota em que o cache do Redis está funcionando. </p>
 
+
+# Celery #
+O Celery é um sistema distribuído simples, flexível e confiável para processar grandes quantidades de mensagens, ao mesmo tempo em que fornece às operações as ferramentas necessárias para manter esse sistema.
+
+É uma fila de tarefas com foco no processamento em tempo real, além de oferecer suporte ao agendamento de tarefas.As filas de tarefas são usadas como um mecanismo para distribuir o trabalho entre threads ou máquinas.A entrada de uma fila de tarefas é uma unidade de trabalho denominada tarefa. Processos de trabalho dedicados monitoram constantemente as filas de tarefas para novos trabalhos a serem executados.
+
+O Celery requer um transporte de mensagens para enviar e receber mensagens. Os transportes do broker RabbitMQ e Redis são completos, mas também há suporte para Amazon SQS, Apachhe Zookeeper, entre outros.
+
+No projeto em si, será utilizado o Redis para o sistema de mensageria pois já está feito a instalação como descrito na sessão anterior. Foi adicionado uma simples rota para exemplificar como o sistema de filas e tarefas funcionam em uma aplicação, e para ter uma noção de como escalar para caso a aplicação cresca.
+
+#### Passos ####
+1 - Ter o Redis rodando no endereço redis://127.0.0.1:6379 como na sessão anterior.
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/redis/redis_running.png)
+
+2 - Ter a API rodando normalmente utilizando o comando "python manage.py runserver"
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/celery/api_running.png)
+
+3 - Abrir outro terminal, acessar a pasta do projeto, ativar o ambiente virtual e executar o comando abaixo:
+
+- celery -A project.celery worker --pool=solo -l info
+
+4 - Abrir o Postman, ou qualquer outra plataforma de API, e fazer a simples chamada no End-Point abaixo:
+
+ - https://localhost/celery/ (MÉTODO HTTP GET)
+
+Esta rota irá apenas retornar uma mensagem "Done" e um código 200. 
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/celery/route.png)
+
+Porém, se você observar no terminal que você rodou o comando do celery, poderá observar que foi executada uma ação que foi justamente mostrar na tela os números de 0 a 9. Isso mostra como o celery funciona, em que ele passa a responsabilidade da execução da operação para outra máquina, desocupando a principal para que ela possa executar  outra coisa, e quando a tarefa executada pelo Celery terminar, ele irá devolver a resposta.
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/celery/celery_working.png)
+
+Para a implementação do Celery na aplicação foi utilizado o link abaixo como referência para a integração do Django, Celery e o Redis.
+- <a href="https://www.youtube.com/watch?v=EfWa6KH8nVI" target="_blank">link para o vídeo</a>
+
 # Autenticação JWT #
 
 <p> JWT (JSON Web Token) é um método RCT 7519 padrão da indústria para realizar autenticação entre duas partes por meio de um token assinado que autentica uma requisição web. Esse token é um código em Base64 que armazena objetos JSON com os dados que permitem a autenticação da requisição.</p>
