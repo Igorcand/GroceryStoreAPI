@@ -412,6 +412,16 @@ Porém, se você observar no terminal que você rodou o comando do celery, poder
 
 ![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/celery/celery_working.png)
 
+Utilizando a biblioteca django-celery-results nos podemos ver o resultado das tarefas executadas de uma maneira mais clara e legível. Pois com ela, nos podemos acessar o admin do django pela URL abaixo e ver que temos mais duas tabelas acrescentadas.
+
+- https://localhost/admin/ 
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/celery/celery_admin.png)
+
+A se clicarmos em "Tasks results" podemos ver mais informações sobre a tarefa executada que antes eram omitidas.
+
+![Mobile 1](https://github.com/Igorcand/PoliBrasTest/blob/master/assets/celery/tasks.png)
+
 Para a implementação do Celery na aplicação foi utilizado o link abaixo como referência para a integração do Django, Celery e o Redis.
 - <a href="https://www.youtube.com/watch?v=EfWa6KH8nVI" target="_blank">link para o vídeo</a>
 
