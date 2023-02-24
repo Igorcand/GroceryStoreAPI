@@ -1,4 +1,4 @@
-# PoliBrasTest #
+# GroceryStoreAPI #
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/Igorcand/PoliBrasTest/blob/master/LICENSE) 
 
