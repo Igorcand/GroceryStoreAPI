@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.parsers import JSONParser
@@ -50,7 +49,7 @@ class ReportsAPIView(APIView):
             return Response(response, status=status.HTTP_201_CREATED)
         return Response(
             {
-                'message': f"You need to pass even 'data' value to do a filter on database"
+                'message': "You need to pass even 'data' value to do a filter on database"
             },
             status.HTTP_400_BAD_REQUEST,
         )

@@ -41,7 +41,7 @@ def test_one_product_exists_should_succeed(client) -> None:
 
 def test_get_one_product_by_pk_should_succeed(client) -> None:
     category = Category.objects.create(name='CategoryTest')
-    test_product = Product.objects.create(
+    Product.objects.create(
         name='ProductTest',
         description='description',
         stock=2,
@@ -87,7 +87,7 @@ def test_create_products_with_argumets_empty_should_fail(client) -> None:
 
 def test_create_existing_product_should_fail(client) -> None:
     category = Category.objects.create(name='CategoryTest')
-    test_product = Product.objects.create(
+    Product.objects.create(
         name='ProductTest',
         description='description',
         stock=2,
@@ -113,7 +113,7 @@ def test_create_existing_product_should_fail(client) -> None:
 
 
 def test_create_product_should_succeed(client) -> None:
-    category = Category.objects.create(name='CategoryTest')
+    Category.objects.create(name='CategoryTest')
     response = client.post(
         path=products_url,
         data={
@@ -137,7 +137,7 @@ def test_create_product_should_succeed(client) -> None:
 # --------------------- Test Put Categories -----------------------
 def test_update_existing_product_should_succeed(client) -> None:
     category = Category.objects.create(name='CategoryTest')
-    test_product = Product.objects.create(
+    Product.objects.create(
         name='ProductTest',
         description='description',
         stock=2,
@@ -168,7 +168,7 @@ def test_update_existing_product_with_negative_stock_should_fail(
     client,
 ) -> None:
     category = Category.objects.create(name='CategoryTest')
-    test_product = Product.objects.create(
+    Product.objects.create(
         name='ProductTest',
         description='description',
         stock=2,
@@ -196,7 +196,7 @@ def test_update_existing_product_with_nonexisted_category_should_fail(
     client,
 ) -> None:
     category = Category.objects.create(name='CategoryTest')
-    test_product = Product.objects.create(
+    Product.objects.create(
         name='ProductTest',
         description='description',
         stock=2,
@@ -252,7 +252,7 @@ def test_delete_product_nonexisted_should_fail(client) -> None:
 
 def test_delete_product_existed_should_succeed(client) -> None:
     category = Category.objects.create(name='CategoryTest')
-    test_product = Product.objects.create(
+    Product.objects.create(
         name='ProductTest',
         description='description',
         stock=2,

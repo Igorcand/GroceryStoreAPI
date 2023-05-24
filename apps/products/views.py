@@ -26,7 +26,7 @@ class ProductAPIView(APIView):
         serializer = ProductsSerializer(data=data)
         if serializer.is_valid():
             unit = serializer.validated_data.get('unit')
-            if unit == None or unit == 'Item':
+            if unit is None or unit == 'Item':
                 name = serializer.validated_data.get('name')
                 description = serializer.validated_data.get('description')
                 stock = serializer.validated_data.get('stock')
@@ -81,7 +81,7 @@ class ProductDetailAPIView(APIView):
             stock = serializer.validated_data.get('stock')
             if stock < 0:
                 return Response(
-                    {'message': f'Cannot update a negative stock.'},
+                    {'message': 'Cannot update a negative stock.'},
                     status.HTTP_400_BAD_REQUEST,
                 )
 

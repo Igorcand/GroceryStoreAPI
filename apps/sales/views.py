@@ -1,6 +1,5 @@
 import datetime
 
-from django.http import Http404
 from django.http.response import JsonResponse
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status

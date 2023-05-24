@@ -13,7 +13,7 @@ class AuthorizationAPIView(APIView):
     @swagger_auto_schema(tags=['Authorization'])
     def get(self, request):
         return Response(
-            {'message': f'You have authorization.'},
+            {'message': 'You have authorization.'},
             status.HTTP_200_OK,
         )
 
@@ -23,6 +23,6 @@ class CeleryAPIView(APIView):
     def get(self, request):
         test_func.delay()
         return Response(
-            {'message': f'Done'},
+            {'message': 'Done'},
             status.HTTP_200_OK,
         )
