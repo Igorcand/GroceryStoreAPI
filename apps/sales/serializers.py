@@ -5,4 +5,4 @@ from apps.sales import models
 class SalesSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Sale
-        fields = "__all__"
+        fields = '__all__'

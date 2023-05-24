@@ -11,24 +11,24 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Reports",
+            name='Reports',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("product", models.CharField(max_length=255)),
-                ("category", models.CharField(max_length=255)),
-                ("quantity_itens", models.IntegerField()),
-                ("stock", models.IntegerField()),
-                ("sale", models.DecimalField(decimal_places=2, max_digits=10)),
-                ("payment", models.CharField(max_length=20)),
-                ("data", models.DateField(blank=True, null=True)),
+                ('product', models.CharField(max_length=255)),
+                ('category', models.CharField(max_length=255)),
+                ('quantity_itens', models.IntegerField()),
+                ('stock', models.IntegerField()),
+                ('sale', models.DecimalField(decimal_places=2, max_digits=10)),
+                ('payment', models.CharField(max_length=20)),
+                ('data', models.DateField(blank=True, null=True)),
             ],
         ),
     ]

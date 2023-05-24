@@ -1,10 +1,10 @@
 from django.urls import path
 
-from .views import (
-    AuthorizationAPIView, CeleryAPIView
-)
+from .views import AuthorizationAPIView, CeleryAPIView
 
 urlpatterns = [
-    path("authorization/", AuthorizationAPIView.as_view(), name="authorization"),
-    path("celery/", CeleryAPIView.as_view(), name="celery"),
+    path(
+        'authorization/', AuthorizationAPIView.as_view(), name='authorization'
+    ),
+    path('celery/', CeleryAPIView.as_view(), name='celery'),
 ]

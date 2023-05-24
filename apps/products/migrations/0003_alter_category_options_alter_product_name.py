@@ -6,17 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("products", "0002_alter_category_name"),
+        ('products', '0002_alter_category_name'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="category",
-            options={"verbose_name_plural": "Categories"},
+            name='category',
+            options={'verbose_name_plural': 'Categories'},
         ),
         migrations.AlterField(
-            model_name="product",
-            name="name",
+            model_name='product',
+            name='name',
             field=models.CharField(max_length=50, unique=True),
         ),
     ]

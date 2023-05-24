@@ -11,55 +11,57 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("products", "0001_initial"),
+        ('products', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="Sale",
+            name='Sale',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("data", models.DateField(blank=True, null=True)),
+                ('data', models.DateField(blank=True, null=True)),
                 (
-                    "quantity",
+                    'quantity',
                     models.DecimalField(
                         blank=True,
                         decimal_places=2,
                         max_digits=13,
                         null=True,
                         validators=[
-                            django.core.validators.MinValueValidator(Decimal("0.00"))
+                            django.core.validators.MinValueValidator(
+                                Decimal('0.00')
+                            )
                         ],
                     ),
                 ),
                 (
-                    "payment",
+                    'payment',
                     models.CharField(
                         blank=True,
                         choices=[
-                            ("0", "Credit Card"),
-                            ("1", "Debit Card"),
-                            ("2", "Money"),
+                            ('0', 'Credit Card'),
+                            ('1', 'Debit Card'),
+                            ('2', 'Money'),
                         ],
                         max_length=3,
                         null=True,
                     ),
                 ),
                 (
-                    "product",
+                    'product',
                     models.ForeignKey(
                         blank=True,
                         null=True,
                         on_delete=django.db.models.deletion.PROTECT,
-                        to="products.product",
+                        to='products.product',
                     ),
                 ),
             ],

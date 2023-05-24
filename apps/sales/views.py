@@ -17,27 +17,27 @@ from apps.reports.models import Reports
 class SaleAPIView(APIView):
     # permission_classes = (IsAuthenticated,)
 
-    @swagger_auto_schema(tags=["Sale"])
+    @swagger_auto_schema(tags=['Sale'])
     def get(self, request):
         sales = Sale.objects.all()
         serializer = SalesSerializer(sales, many=True)
         return Response(serializer.data)
 
-    @swagger_auto_schema(request_body=SalesSerializer, tags=["Sale"])
+    @swagger_auto_schema(request_body=SalesSerializer, tags=['Sale'])
     def post(self, request):
         data = JSONParser().parse(request)
         serializer = SalesSerializer(data=data)
         if serializer.is_valid():
             if not data:
-                raise APIException("You need to pass the fields")
-            quantity = serializer.validated_data.get("quantity")
-            product_name = serializer.validated_data.get("product")
-            data = serializer.validated_data.get("data")
-            payment = serializer.validated_data.get("payment")
+                raise APIException('You need to pass the fields')
+            quantity = serializer.validated_data.get('quantity')
+            product_name = serializer.validated_data.get('product')
+            data = serializer.validated_data.get('data')
+            payment = serializer.validated_data.get('payment')
 
             product = Product.objects.get(name=product_name)
             unit = product.unit
-            if unit == "Item":
+            if unit == 'Item':
                 quantity = int(quantity)
             else:
                 quantity = float(quantity)
@@ -46,7 +46,7 @@ class SaleAPIView(APIView):
             if new_stock < 0:
                 return Response(
                     {
-                        "message": f"Cannot buy '{quantity}'  of '{product_name}' because we just have {stock} on stock"
+                        'message': f"Cannot buy '{quantity}'  of '{product_name}' because we just have {stock} on stock"
                     },
                     status.HTTP_400_BAD_REQUEST,
                 )
@@ -67,5 +67,9 @@ class SaleAPIView(APIView):
                 product.save()
 
             serializer.save()
-            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
-        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse(
+                serializer.data, status=status.HTTP_201_CREATED
+            )
+        return JsonResponse(
+            serializer.errors, status=status.HTTP_400_BAD_REQUEST
+        )

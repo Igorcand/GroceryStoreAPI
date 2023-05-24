@@ -6,17 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("products", "0004_rename_quantity_product_stock"),
+        ('products', '0004_rename_quantity_product_stock'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="product",
-            name="unit",
+            model_name='product',
+            name='unit',
             field=models.CharField(
                 blank=True,
-                choices=[("Item", "Item"), ("Kg", "Kg")],
-                default="Item",
+                choices=[('Item', 'Item'), ('Kg', 'Kg')],
+                default='Item',
                 max_length=30,
                 null=True,
             ),

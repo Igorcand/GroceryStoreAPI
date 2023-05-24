@@ -6,21 +6,21 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("sales", "0002_alter_sale_product"),
+        ('sales', '0002_alter_sale_product'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="sale",
-            name="payment",
+            model_name='sale',
+            name='payment',
             field=models.CharField(
                 blank=True,
                 choices=[
-                    ("Credit Card", "Credit Card"),
-                    ("Debit Card", "Debit Card"),
-                    ("Money", "Money"),
+                    ('Credit Card', 'Credit Card'),
+                    ('Debit Card', 'Debit Card'),
+                    ('Money', 'Money'),
                 ],
-                default="Credit Card",
+                default='Credit Card',
                 max_length=30,
                 null=True,
             ),

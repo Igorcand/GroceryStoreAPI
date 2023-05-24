@@ -5,4 +5,4 @@ from apps.reports import models
 class ReportsSerializers(serializers.ModelSerializer):
     class Meta:
         model = models.Reports
-        fields = "__all__"
+        fields = '__all__'

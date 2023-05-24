@@ -10,16 +10,20 @@ from .views import (
 
 urlpatterns = [
     path(
-        "products_cache/",
+        'products_cache/',
         cache_page(60)(ProductAPIView.as_view()),
-        name="products_cache",
+        name='products_cache',
     ),
-    path("products/", ProductAPIView.as_view(), name="products"),
-    path("products/<int:pk>/", ProductDetailAPIView.as_view(), name="products_detail"),
-    path("categories/", CategoryAPIView.as_view(), name="categories"),
+    path('products/', ProductAPIView.as_view(), name='products'),
     path(
-        "categories/<int:pk>/",
+        'products/<int:pk>/',
+        ProductDetailAPIView.as_view(),
+        name='products_detail',
+    ),
+    path('categories/', CategoryAPIView.as_view(), name='categories'),
+    path(
+        'categories/<int:pk>/',
         CategoryDetailAPIView.as_view(),
-        name="categories_detail",
+        name='categories_detail',
     ),
 ]

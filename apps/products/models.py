@@ -5,7 +5,7 @@ class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = 'Categories'
 
     def __str__(self):
         return self.name
@@ -13,8 +13,8 @@ class Category(models.Model):
 
 class Product(models.Model):
     class UnitType(models.TextChoices):
-        ITEM = "Item"
-        KG = "Kg"
+        ITEM = 'Item'
+        KG = 'Kg'
 
     name = models.CharField(max_length=50, unique=True)
     description = models.TextField()
@@ -29,7 +29,7 @@ class Product(models.Model):
     )
     category = models.ForeignKey(
         Category,
-        related_name="product",
+        related_name='product',
         on_delete=models.PROTECT,
         null=True,
         blank=True,
