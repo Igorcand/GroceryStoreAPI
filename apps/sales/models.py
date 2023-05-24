@@ -1,8 +1,10 @@
-from django.db import models
-from django.core.validators import MinValueValidator
 from decimal import Decimal
-from apps.products.models import Product
+
+from django.core.validators import MinValueValidator
+from django.db import models
 from django.utils.timezone import now
+
+from apps.products.models import Product
 
 
 class Sale(models.Model):

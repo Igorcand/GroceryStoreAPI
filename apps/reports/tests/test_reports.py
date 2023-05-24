@@ -1,11 +1,11 @@
 import json
+
 import pytest
 from django.urls import reverse
 
+from apps.products.models import Category, Product
 from apps.reports.models import Reports
 from apps.sales.models import Sale
-from apps.products.models import Product, Category
-
 
 # set DJANGO_SETTINGS_MODULE=project.settings
 

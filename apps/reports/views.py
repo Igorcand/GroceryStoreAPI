@@ -1,10 +1,10 @@
 from django.shortcuts import render
+from drf_yasg.utils import swagger_auto_schema
+from rest_framework import status
+from rest_framework.parsers import JSONParser
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.parsers import JSONParser
-from rest_framework import status
-from drf_yasg.utils import swagger_auto_schema
-from rest_framework.permissions import IsAuthenticated
 
 from .models import Reports
 from .serializers import ReportsSerializers

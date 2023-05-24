@@ -1,17 +1,19 @@
-from rest_framework.views import APIView
-from rest_framework.exceptions import APIException
-from rest_framework.response import Response
-from django.http.response import JsonResponse
-from django.http import Http404
-from rest_framework.parsers import JSONParser
-from rest_framework import status
-from drf_yasg.utils import swagger_auto_schema
-from rest_framework.permissions import IsAuthenticated
 import datetime
 
-from .models import Sale, Product
-from .serializers import SalesSerializer
+from django.http import Http404
+from django.http.response import JsonResponse
+from drf_yasg.utils import swagger_auto_schema
+from rest_framework import status
+from rest_framework.exceptions import APIException
+from rest_framework.parsers import JSONParser
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from apps.reports.models import Reports
+
+from .models import Product, Sale
+from .serializers import SalesSerializer
 
 
 class SaleAPIView(APIView):
