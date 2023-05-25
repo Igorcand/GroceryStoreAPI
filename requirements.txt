@@ -7,3 +7,4 @@ pytest-django==4.5.2
 redis==3.4.1
 celery==5.2.7
 django-celery-results==2.4.0
+psycopg2-binary==2.9.3
