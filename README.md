@@ -485,16 +485,17 @@ Para a criação de container e a imagem capaz de rodar a aplicação django, fo
 ### COMO RODAR PELO DOCKER ###
 ```bash
 # Fazer o build da imagem
-docker-compose build .
+docker build .
 
 # Executar a imagem
 docker-compose up -d --build
 
 # Criar as tabelas do Banco de Dados dentro do container
-docker-compose exec api python manage.py migrate
+docker-compose exec api python src/manage.py migrate
 
 # Criar um superusuário
-docker-compose exec api python manage.py createsuperuser
+docker-compose exec api python src/manage.py createsuperuser
+
 
 # Finalizar a imagem, caso necessite
 docker-compose down
