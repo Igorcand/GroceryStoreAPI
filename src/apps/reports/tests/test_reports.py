@@ -5,7 +5,6 @@ from django.urls import reverse
 
 from apps.reports.models import Reports
 
-# set DJANGO_SETTINGS_MODULE=project.settings
 
 reports_url = reverse('reports')
 

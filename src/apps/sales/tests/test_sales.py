@@ -6,7 +6,6 @@ from django.urls import reverse
 from apps.products.models import Category, Product
 from apps.sales.models import Sale
 
-# set DJANGO_SETTINGS_MODULE=project.settings
 
 sales_url = reverse('sales')
 

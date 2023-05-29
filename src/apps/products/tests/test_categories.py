@@ -5,7 +5,6 @@ from django.urls import reverse
 
 from apps.products.models import Category
 
-# set DJANGO_SETTINGS_MODULE=project.settings
 
 categories_url = reverse('categories')
 categories_detail_url = reverse('categories_detail', kwargs={'pk': 1})
