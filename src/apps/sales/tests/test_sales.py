@@ -6,7 +6,6 @@ from django.urls import reverse
 from apps.products.models import Category, Product
 from apps.sales.models import Sale
 
-
 sales_url = reverse('sales')
 
 pytestmark = pytest.mark.django_db

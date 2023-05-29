@@ -5,7 +5,6 @@ from django.urls import reverse
 
 from apps.reports.models import Reports
 
-
 reports_url = reverse('reports')
 
 pytestmark = pytest.mark.django_db

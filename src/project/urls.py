@@ -8,9 +8,9 @@ from rest_framework_simplejwt.views import (TokenObtainPairView,
 
 schema_view = get_schema_view(
     openapi.Info(
-        title='PoliBras Test API',
+        title='Grocery Store API',
         default_version='v1',
-        description='This API was built following the steps described on chalange.',
+        description='This API is to simulate a small market.',
         terms_of_service='https://www.google.com/policies/terms/',
         contact=openapi.Contact(email='contact@snippets.local'),
         license=openapi.License(name='BSD License'),
