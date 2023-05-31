@@ -1,6 +1,6 @@
 # GroceryStoreAPI #
 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Igorcand/PoliBrasTest/blob/master/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Igorcand/PoliBrasTest/blob/master/LICENSE) ![version](https://img.shields.io/badge/version-1.2.3-blue) ![coverage](https://img.shields.io/badge/coverage-80%25-yellowgreen)
 
 # Sobre o Projeto #
 <p> Esse projeto foi desenvolvido com a intenção de praticar as habilidades de Back-End. Como isso, o intuito da aplicação é fazer uma API de gerenciamento de um pequeno mercadinho, utilizando o Django, um framework python, com as seguintes funcionalidades: Cadastro de produtos, Lançamento de vendas e Relatório de caixa. </p>
@@ -485,9 +485,24 @@ Para a criação de container e a imagem capaz de rodar a aplicação django, fo
 ### COMO RODAR PELO DOCKER ###
 ```bash
 # Fazer o build da imagem
-docker-compose build
-# Rodar a aplicaçãp
+docker build .
+
+# Executar a imagem
+docker-compose up -d --build
+
+# Criar as tabelas do Banco de Dados dentro do container
+docker-compose exec api python src/manage.py migrate
+
+# Criar um superusuário
+docker-compose exec api python src/manage.py createsuperuser
+
+
+# Finalizar a imagem, caso necessite
+docker-compose down
+
+# Após os passos anteriores, para executar a imagem novamente, utilize apenas o comando abaixo
 docker-compose up
+
 ```
 
 #### Imagem criada ####
