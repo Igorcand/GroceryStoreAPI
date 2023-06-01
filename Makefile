@@ -8,7 +8,7 @@ format:
 lint:
 	blue . --check
 	isort . --check 
-	prospector --with-tool pepe257 --docs-warning
+	prospector --with-tool pep257 --docs-warning
 
 test:
 	pytest
