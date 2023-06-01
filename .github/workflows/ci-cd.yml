@@ -1,38 +1,47 @@
-name: Continuous Integration
-on: [push]
+name: Django CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
 jobs:
-  lint_and_test:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.9]
+
     steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
 
-       - name: Set up python
-          - uses: actions/checkout@v3
-          - name: Set up Python ${{ matrix.python-version }}
-            uses: actions/setup-python@v3
-            with:
-              python-version: ${{ matrix.python-version }}
+    - name: Build the Docker image
+      run: docker build . 
+    
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+          virtualenvs-in-project: true
 
-        - name: Check out repository
-          uses: actions/checkout@v2
+    - name: Load cached venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v2
+      with:
+          path: .venv
+          key: venv-${{ hashFiles('**/poetry.lock') }}
 
-        - name: Install Poetry
-          uses: snok/install-poetry@v1
-          with:
-              virtualenvs-in-project: true
+    - name: Install dependencies
+      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      run: poetry install --no-interaction
 
-        - name: Load cached venv
-          id: cached-poetry-dependencies
-          uses: actions/cache@v2
-          with:
-              path: .venv
-              key: venv-${{ hashFiles('**/poetry.lock') }}
+    - name: Lint
+      run: poetry run make lint
 
-        - name: Install dependencies
-          if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-          run: poetry install --no-interaction
-
-        - name: Lint
-          run: poetry run make lint
-
-        - name: Run tests
-          run: poetry run make test
+    - name: Run tests
+      run: poetry run make test
