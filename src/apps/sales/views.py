@@ -13,6 +13,7 @@ from apps.reports.models import Reports
 
 from .models import Product, Sale
 from .serializers import SalesSerializer
+from src.mixins.log import logger
 
 
 class SaleAPIView(APIView):
@@ -22,6 +23,7 @@ class SaleAPIView(APIView):
     def get(self, request):
         sales = Sale.objects.all()
         serializer = SalesSerializer(sales, many=True)
+        logger.info('Getting sales')
         return Response(serializer.data)
 
     @swagger_auto_schema(request_body=SalesSerializer, tags=['Sale'])
@@ -45,6 +47,7 @@ class SaleAPIView(APIView):
             stock = product.stock
             new_stock = stock - quantity
             if new_stock < 0:
+                logger.warning('Stock it not enough')
                 return Response(
                     {
                         'message': f"Cannot buy '{quantity}'  of '{product_name}' because we just have {stock} on stock"
@@ -68,9 +71,11 @@ class SaleAPIView(APIView):
                 product.save()
 
             serializer.save()
+            logger.info('Created sale')
             return JsonResponse(
                 serializer.data, status=status.HTTP_201_CREATED
             )
+        logger.warning('Serializer is not valid')
         return JsonResponse(
             serializer.errors, status=status.HTTP_400_BAD_REQUEST
         )

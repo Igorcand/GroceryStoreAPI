@@ -7,6 +7,7 @@ from rest_framework.views import APIView
 
 from .models import Reports
 from .serializers import ReportsSerializers
+from src.mixins.log import logger
 
 
 class ReportsAPIView(APIView):
@@ -16,6 +17,7 @@ class ReportsAPIView(APIView):
     def get(self, request):
         reports = Reports.objects.all()
         serializer = ReportsSerializers(reports, many=True)
+        logger.info('Getting reports')
         return Response(serializer.data)
 
     @swagger_auto_schema(request_body=ReportsSerializers, tags=['Report'])
@@ -45,8 +47,9 @@ class ReportsAPIView(APIView):
                 },
                 'description': description,
             }
-
+            logger.info('Filtred reports')
             return Response(response, status=status.HTTP_201_CREATED)
+        logger.warning("You need to pass even 'data' value to do a filter on database")
         return Response(
             {
                 'message': "You need to pass even 'data' value to do a filter on database"
