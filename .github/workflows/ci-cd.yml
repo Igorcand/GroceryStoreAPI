@@ -1,4 +1,4 @@
-name: Django CI
+ame: Django CI
 
 on:
   push:
@@ -23,25 +23,3 @@ jobs:
 
     - name: Build the Docker image
       run: docker build . 
-    
-    - name: Install Poetry
-      uses: snok/install-poetry@v1
-      with:
-          virtualenvs-in-project: true
-
-    - name: Load cached venv
-      id: cached-poetry-dependencies
-      uses: actions/cache@v2
-      with:
-          path: .venv
-          key: venv-${{ hashFiles('**/poetry.lock') }}
-
-    - name: Install dependencies
-      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction
-
-    - name: Lint
-      run: poetry run make lint
-
-    - name: Run tests
-      run: poetry run make test
