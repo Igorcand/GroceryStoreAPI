@@ -3,7 +3,7 @@ import json
 import pytest
 from django.urls import reverse
 
-from apps.products.models import Category
+from src.apps.products.models import Category
 
 categories_url = reverse('categories')
 categories_detail_url = reverse('categories_detail', kwargs={'pk': 1})

@@ -24,10 +24,10 @@ urlpatterns = [
     path('auth/', include('rest_framework.urls')),
     path('token/', TokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
-    path('api/', include('apps.products.urls')),
-    path('api/', include('apps.sales.urls')),
-    path('api/', include('apps.reports.urls')),
-    path('api/', include('apps.authorization.urls')),
+    path('api/', include('src.apps.products.urls')),
+    path('api/', include('src.apps.sales.urls')),
+    path('api/', include('src.apps.reports.urls')),
+    path('api/', include('src.apps.authorization.urls')),
 ]
 
 # Swagger

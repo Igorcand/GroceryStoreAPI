@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.reports.models import Reports
+from src.apps.reports.models import Reports
 
 from .models import Product, Sale
 from .serializers import SalesSerializer

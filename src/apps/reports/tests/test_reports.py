@@ -3,7 +3,7 @@ import json
 import pytest
 from django.urls import reverse
 
-from apps.reports.models import Reports
+from src.apps.reports.models import Reports
 
 reports_url = reverse('reports')
 

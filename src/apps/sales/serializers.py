@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from apps.sales import models
+from src.apps.sales import models
 
 
 class SalesSerializer(serializers.ModelSerializer):

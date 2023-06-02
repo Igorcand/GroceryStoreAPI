@@ -9,12 +9,28 @@ services:
       - .:/code
     depends_on:
       - db
+      - redis
+  celery:
+    build: .
+    command: celery -A src worker -l INFO
+    volumes:
+        - .:/code
+    environment:
+        - DEBUG=1
+        - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+        - CELERY_BROKER=redis://redis:6379/0
+        - CELERY_BACKEND=redis://redis:6379/0
+    depends_on:
+        - api
+        - redis
   db:
     image: postgres:13
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
+  redis:
+    image: "redis:alpine"
 
 volumes:
   postgres_data:
