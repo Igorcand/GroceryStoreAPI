@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import AuthorizationAPIView, CeleryAPIView
+from src.apps.authorization.views import AuthorizationAPIView, CeleryAPIView
 
 urlpatterns = [
     path(

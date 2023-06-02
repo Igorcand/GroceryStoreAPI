@@ -12,7 +12,7 @@ services:
       - redis
   celery:
     build: .
-    command: celery -A src worker -l INFO
+    command: celery -A src.project worker -l INFO
     volumes:
         - .:/code
     environment:

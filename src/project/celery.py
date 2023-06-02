@@ -7,16 +7,15 @@ from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'src.project.settings')
 
-app = Celery("src")
+app = Celery("src.project")
 app.conf.enable_utc = False
 
 app.config_from_object(settings, namespace='CELERY')
 
 app.autodiscover_tasks()
 
-@app.task(bind=True)
-def debug_task(self):
-    print(f' Request : {self.request!r}')
+# @app.task(bind=True)
+# def debug_task(self):
+#     print(f' Request : {self.request!r}')
 
 
-# celery -A project.celery worker --pool=solo -l info

@@ -7,8 +7,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Category, Product
-from .serializers import CategorySerializer, ProductsSerializer
+from src.apps.products.models import Category, Product
+from src.apps.products.serializers import CategorySerializer, ProductsSerializer
 from src.mixins.log import logger
 
 

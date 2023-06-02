@@ -11,8 +11,8 @@ from rest_framework.views import APIView
 
 from src.apps.reports.models import Reports
 
-from .models import Product, Sale
-from .serializers import SalesSerializer
+from src.apps.sales.models import Product, Sale
+from src.apps.sales.serializers import SalesSerializer
 from src.mixins.log import logger
 
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Reports
+from src.apps.reports.models import Reports
 
 
 class ReportAdmin(admin.ModelAdmin):

@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .tasks import test_func
+from src.apps.authorization.tasks import test_func
 
 
 class AuthorizationAPIView(APIView):

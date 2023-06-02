@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Sale
+from src.apps.sales.models import Sale
 
 
 class SaleAdmin(admin.ModelAdmin):
