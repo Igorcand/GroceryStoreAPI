@@ -49,7 +49,9 @@ class ReportsAPIView(APIView):
             }
             logger.info('Filtred reports')
             return Response(response, status=status.HTTP_201_CREATED)
-        logger.warning("You need to pass even 'data' value to do a filter on database")
+        logger.warning(
+            "You need to pass even 'data' value to do a filter on database"
+        )
         return Response(
             {
                 'message': "You need to pass even 'data' value to do a filter on database"

@@ -1,8 +1,12 @@
 from django.urls import path
 from django.views.decorators.cache import cache_page
 
-from src.apps.products.views import (CategoryAPIView, CategoryDetailAPIView, ProductAPIView,
-                    ProductDetailAPIView)
+from src.apps.products.views import (
+    CategoryAPIView,
+    CategoryDetailAPIView,
+    ProductAPIView,
+    ProductDetailAPIView,
+)
 
 urlpatterns = [
     path(

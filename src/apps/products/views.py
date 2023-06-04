@@ -8,7 +8,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from src.apps.products.models import Category, Product
-from src.apps.products.serializers import CategorySerializer, ProductsSerializer
+from src.apps.products.serializers import (
+    CategorySerializer,
+    ProductsSerializer,
+)
 from src.mixins.log import logger
 
 
@@ -25,9 +28,9 @@ class ProductAPIView(APIView):
         except Exception as e:
             logger.critical(f'{str(e)}')
             return Response(
-                    {'message': 'Something went wrong'},
-                    status.HTTP_400_BAD_REQUEST,
-                )
+                {'message': 'Something went wrong'},
+                status.HTTP_400_BAD_REQUEST,
+            )
 
     @swagger_auto_schema(request_body=ProductsSerializer, tags=['Product'])
     def post(self, request):
@@ -166,7 +169,9 @@ class CategoryDetailAPIView(APIView):
             logger.info(f'Deleted category {pk}')
             return Response(status=status.HTTP_204_NO_CONTENT)
         except:
-            logger.warning("You're trying to delete a category that its been used")
+            logger.warning(
+                "You're trying to delete a category that its been used"
+            )
             return Response(
                 {
                     'message': f"Cannot delete '{category}' because this category is been used."
