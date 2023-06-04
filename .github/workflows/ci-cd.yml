@@ -24,5 +24,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . 
 
+    - name: checkout repo
+      uses: actions/checkout@v2
     - name: Format code
       run: make format
