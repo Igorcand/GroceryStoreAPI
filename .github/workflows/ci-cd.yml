@@ -23,3 +23,6 @@ jobs:
 
     - name: Build the Docker image
       run: docker build . 
+
+    - name: Format code
+        run: make format
