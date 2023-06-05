@@ -17,6 +17,8 @@ django-celery-results = "2.4.0"
 psycopg2-binary = "^2.9.6"
 python-dotenv = "^1.0.0"
 sentry-sdk = "^1.25.0"
+typer-cli = "^0.0.13"
+typer = "0.7.0"
 
 
 [tool.poetry.group.dev.dependencies]
