@@ -12,4 +12,4 @@ python-dotenv==1.0.0
 sentry-sdk
 mkdocs==1.4.3
 pymdown-extensions==10.0.1
-mkdocs-material==^9.1.15
+mkdocs-material==9.1.15
