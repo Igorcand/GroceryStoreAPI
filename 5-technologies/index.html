@@ -1,0 +1,1062 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../4-api/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+    
+    
+      
+        <title>Tecnologias - GroceryStoreAPI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tecnologias" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GroceryStoreAPI" class="md-header__button md-logo" aria-label="GroceryStoreAPI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GroceryStoreAPI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tecnologias
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Modo noturno"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Modo noturno" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Modo claro" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GroceryStoreAPI" class="md-nav__button md-logo" aria-label="GroceryStoreAPI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    GroceryStoreAPI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-home/" class="md-nav__link">
+        GroceryStoreAPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-info/" class="md-nav__link">
+        Info
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-intro/" class="md-nav__link">
+        Instruções
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-api/" class="md-nav__link">
+        API REST
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tecnologias
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tecnologias
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#poetry" class="md-nav__link">
+    Poetry
+  </a>
+  
+    <nav class="md-nav" aria-label="Poetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alguns-comandos-do-poetry-que-talvez-possa-precisar" class="md-nav__link">
+    Alguns comandos do Poetry que talvez possa precisar
+  </a>
+  
+    <nav class="md-nav" aria-label="Alguns comandos do Poetry que talvez possa precisar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ativacao-do-ambiente-virtual" class="md-nav__link">
+    Ativação do ambiente virtual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-nova-biblioteca" class="md-nav__link">
+    Adicionar nova biblioteca
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remover-nova-biblioteca" class="md-nav__link">
+    Remover nova biblioteca
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-requirementstxt" class="md-nav__link">
+    Criar um requirements.txt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatacoes-de-codigo" class="md-nav__link">
+    Formatações de Código
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatações de Código">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blue" class="md-nav__link">
+    blue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isort" class="md-nav__link">
+    isort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prospector" class="md-nav__link">
+    prospector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    Admin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swagger" class="md-nav__link">
+    Swagger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest" class="md-nav__link">
+    Pytest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    REDIS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery" class="md-nav__link">
+    Celery
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs-e-sentry" class="md-nav__link">
+    Logs e Sentry
+  </a>
+  
+    <nav class="md-nav" aria-label="Logs e Sentry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo" class="md-nav__link">
+    Exemplo #####
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-do-sentry" class="md-nav__link">
+    Interface do Sentry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autenticacao-jwt" class="md-nav__link">
+    Autenticação JWT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-rodar-pelo-docker" class="md-nav__link">
+    COMO RODAR PELO DOCKER
+  </a>
+  
+    <nav class="md-nav" aria-label="COMO RODAR PELO DOCKER">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagem-criada" class="md-nav__link">
+    Imagem criada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rodando-a-partir-do-docker" class="md-nav__link">
+    Rodando a partir do Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Rodando a partir do Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#django-api" class="md-nav__link">
+    Django API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgres-database" class="md-nav__link">
+    Postgres DataBase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis_1" class="md-nav__link">
+    Redis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#celery_1" class="md-nav__link">
+    Celery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#poetry" class="md-nav__link">
+    Poetry
+  </a>
+  
+    <nav class="md-nav" aria-label="Poetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alguns-comandos-do-poetry-que-talvez-possa-precisar" class="md-nav__link">
+    Alguns comandos do Poetry que talvez possa precisar
+  </a>
+  
+    <nav class="md-nav" aria-label="Alguns comandos do Poetry que talvez possa precisar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ativacao-do-ambiente-virtual" class="md-nav__link">
+    Ativação do ambiente virtual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicionar-nova-biblioteca" class="md-nav__link">
+    Adicionar nova biblioteca
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remover-nova-biblioteca" class="md-nav__link">
+    Remover nova biblioteca
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-requirementstxt" class="md-nav__link">
+    Criar um requirements.txt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatacoes-de-codigo" class="md-nav__link">
+    Formatações de Código
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatações de Código">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blue" class="md-nav__link">
+    blue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isort" class="md-nav__link">
+    isort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prospector" class="md-nav__link">
+    prospector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    Admin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swagger" class="md-nav__link">
+    Swagger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest" class="md-nav__link">
+    Pytest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    REDIS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery" class="md-nav__link">
+    Celery
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs-e-sentry" class="md-nav__link">
+    Logs e Sentry
+  </a>
+  
+    <nav class="md-nav" aria-label="Logs e Sentry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo" class="md-nav__link">
+    Exemplo #####
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-do-sentry" class="md-nav__link">
+    Interface do Sentry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autenticacao-jwt" class="md-nav__link">
+    Autenticação JWT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-rodar-pelo-docker" class="md-nav__link">
+    COMO RODAR PELO DOCKER
+  </a>
+  
+    <nav class="md-nav" aria-label="COMO RODAR PELO DOCKER">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagem-criada" class="md-nav__link">
+    Imagem criada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rodando-a-partir-do-docker" class="md-nav__link">
+    Rodando a partir do Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Rodando a partir do Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#django-api" class="md-nav__link">
+    Django API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgres-database" class="md-nav__link">
+    Postgres DataBase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis_1" class="md-nav__link">
+    Redis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#celery_1" class="md-nav__link">
+    Celery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="tecnologias">Tecnologias</h1>
+<h2 id="poetry">Poetry</h2>
+<p>Criado por Sébastien Eustace em 2018, o Poetry surge para tentar trazer soluções que foram deixadas de lado por gerenciadores antigos. Ele permite que você declare as bibliotecas das quais seu projeto depende e assim tudo será gerenciado para você.</p>
+<p>Ao inicialixar um projeto com o poetry é criado dois arquivos que seão responsáveis em administrar seu ambiente virtual, poetry.lock e pyproject.toml</p>
+<p>No arquivo pyproject.toml terá informações sobre seu projeto como nome, versão, descrição, dependencias, etc</p>
+<p><img alt="Mobile 1" src="../assets/poetry/pyproject.png" /></p>
+<p>No arquivo poetry.lock ficará as dependencias do seu projeto que serão utilizadas para a inicialização do ambiente virtual.</p>
+<p><img alt="Mobile 1" src="../assets/poetry/poetry-lock.png" /></p>
+<h4 id="alguns-comandos-do-poetry-que-talvez-possa-precisar">Alguns comandos do Poetry que talvez possa precisar</h4>
+<h5 id="ativacao-do-ambiente-virtual">Ativação do ambiente virtual</h5>
+<pre><code class="language-bash">poetry shell
+</code></pre>
+<h5 id="adicionar-nova-biblioteca">Adicionar nova biblioteca</h5>
+<pre><code class="language-bash"># Para adicionar dependencias de produção
+poetry add your_lib
+
+# Para adicionar dependencias de desenvolvimento
+poetry add --dev your_lib
+</code></pre>
+<h5 id="remover-nova-biblioteca">Remover nova biblioteca</h5>
+<pre><code class="language-bash"># Para remover dependencias de produção
+poetry remove your_lib
+
+# Para remover dependencias de desenvolvimento
+poetry remove --dev your_lib
+</code></pre>
+<h5 id="criar-um-requirementstxt">Criar um requirements.txt</h5>
+<pre><code class="language-bash">poetry export -f requirements.txt --output requirements.txt
+</code></pre>
+<h2 id="formatacoes-de-codigo">Formatações de Código</h2>
+<p>Cada programador escreve os códigos de uma maneira, utilizam um tamanho de tela, um softwere, e entre outras diferenças que podem aparecer quando se trata de codas. Com isso, passaram a existir convensões para que as pessoas passasem cada vez mais a utilizarem um padrão, para que fique mais facil o entendimento dos códigos, com isso, para que nós não precisemos lembrar de todas as convenções, existem formatadores de código que fazem isso nós.</p>
+<p>Utilizamos nesse projeto, 3 bibliotecas ótimas que fazem essa formatação automaticamente, já corrigindo o erro, que são:</p>
+<h5 id="blue">blue</h5>
+<pre><code class="language-bash">poetry shell
+blue .
+</code></pre>
+<h5 id="isort">isort</h5>
+<pre><code class="language-bash">poetry shell
+isort .
+</code></pre>
+<h5 id="prospector">prospector</h5>
+<pre><code class="language-bash">poetry shell
+prospector --with-tool pep257 --docs-warning
+</code></pre>
+<h2 id="admin">Admin</h2>
+<p><code>
+Uma das partes mais poderosas do Django é a interface de administração automática. Ele lê metadados de seus modelos para fornecer uma interface rápida e centrada no modelo, onde usuários confiáveis ​​podem gerenciar o conteúdo em seu site. O uso recomendado do administrador é limitado à ferramenta de gerenciamento interno de uma organização. Não se destina a construir todo o seu front-end.</p>
+<p>O administrador tem muitos ganchos para personalização, mas cuidado ao tentar usar esses ganchos exclusivamente. Se você precisar fornecer uma interface mais centrada no processo que abstraia os detalhes de implementação de tabelas e campos do banco de dados, provavelmente é hora de escrever suas próprias exibições.
+</code></p>
+<p>Para acessar a página, basta acessar a URL abaixo e fazer o login com o mesmo usuário e senha do seu super usuário.</p>
+<ul>
+<li>https://localhost/admin/</li>
+</ul>
+<p><img alt="Mobile 1" src="../assets/admin/admin_home.png" /></p>
+<p><img alt="Mobile 1" src="../assets/admin/category_home.png" /></p>
+<p><img alt="Mobile 1" src="../assets/admin/add_category.png" /></p>
+<p><img alt="Mobile 1" src="../assets/admin/product_home.png" /></p>
+<p><img alt="Mobile 1" src="../assets/admin/add_product.png" /></p>
+<p><img alt="Mobile 1" src="../assets/admin/sale_home.png" /></p>
+<p><img alt="Mobile 1" src="../assets/admin/add_sale.png" /></p>
+<p><img alt="Mobile 1" src="../assets/admin/report_home.png" /></p>
+<h2 id="swagger">Swagger</h2>
+<p>O Swagger é um framework composto por diversas ferramentas que, independente da linguagem, auxilia a descrição, consumo e visualização de serviços de uma API REST. </p>
+<p>Foi usado a biblioteca drf-yasg na sua versão 1.21.4 para construir a documentação da API, como mostra abaixo.</p>
+<p>Para acessar a documentação, acesse a URL abaixo:</p>
+<ul>
+<li>https://localhost/swagger/</li>
+</ul>
+<p><img alt="Mobile 1" src="../assets/swagger/swagger.png" />
+<img alt="Mobile 1" src="../assets/swagger/routes1.png" />
+<img alt="Mobile 1" src="../assets/swagger/routes2.png" /></p>
+<p>Para acessar o redoc, acesse a URL abaixo:</p>
+<ul>
+<li>https://localhost/redoc/</li>
+</ul>
+<p><img alt="Mobile 1" src="../assets/swagger/redoc.png" /></p>
+<h2 id="pytest">Pytest</h2>
+<p>A framework  pytest facilita a escrita de testes pequenos e legíveis e pode ser dimensionada para oferecer suporte a testes funcionais complexos para aplicativos e bibliotecas.</p>
+<p>No projeto foi constuido testes para todas as rotas descritas na sessão anterior de sobre como utilizar a API do mercadinho. O intuito dos testes são avaliar as responses e os códigos de status, de chamadas que deveriam funcionar e também as que deveriam falhar.</p>
+<p><img alt="Mobile 1" src="../assets/pytest/tests.png" /></p>
+<pre><code class="language-bash">## Como rodar os testes ##
+
+# Entrar no ambiente virtual do Poetry
+poetry shell
+
+# Entrar no diretorio src/
+cd src/
+
+# Rodar os testes
+pytest
+</code></pre>
+<h2 id="redis">REDIS</h2>
+<p> O Redis é um armazenamento de estrutura de dados de chave-valor de código aberto e na memória. O Redis oferece um conjunto de estruturas versáteis de dados na memória que permite a fácil criação de várias aplicações personalizadas. Os principais casos de uso do Redis incluem cache, gerenciamento de sessões, PUB/SUB e classificações.</p>
+
+<p> No projeto em particular, foi adicionado o mesmo End-Point para a visualização dos produtos utilizando o sistema de cache oferecido pelo Redis. Foi feito a mesma rota pra fins de comparação com o uso do cache e sem, pois com o cache a resposta é mais rápida porém a atualização não é instantânea.</p>
+
+<p>O End-Point contruido na aplicação é: 
+- https://localhost/api/products_cache/ (MÉTODO HTTP GET)</p>
+<p> Você poderá testar a rota adicionando um produto como descrito na sessão acima, e utilizar a rota acima, você verá que o produto recém adicionado não irá aparecer, e se você rodar a rota de visualizar todos os produtos, ele estará lá. Só após 60 segundos que seu produto irá aparecer na rota em que o cache do Redis está funcionando. </p>
+
+<h2 id="celery">Celery</h2>
+<p>O Celery é um sistema distribuído simples, flexível e confiável para processar grandes quantidades de mensagens, ao mesmo tempo em que fornece às operações as ferramentas necessárias para manter esse sistema.</p>
+<p>É uma fila de tarefas com foco no processamento em tempo real, além de oferecer suporte ao agendamento de tarefas.As filas de tarefas são usadas como um mecanismo para distribuir o trabalho entre threads ou máquinas.A entrada de uma fila de tarefas é uma unidade de trabalho denominada tarefa. Processos de trabalho dedicados monitoram constantemente as filas de tarefas para novos trabalhos a serem executados.</p>
+<p>O Celery requer um transporte de mensagens para enviar e receber mensagens. Os transportes do broker RabbitMQ e Redis são completos, mas também há suporte para Amazon SQS, Apachhe Zookeeper, entre outros.</p>
+<p>No projeto em si, será utilizado o Redis para o sistema de mensageria pois já está feito a instalação como descrito na sessão anterior. Foi adicionado uma simples rota para exemplificar como o sistema de filas e tarefas funcionam em uma aplicação, e para ter uma noção de como escalar para caso a aplicação cresca.</p>
+<p>Para utilizar o end-point wue foi criado para o celery basta abrir o Postman, ou qualquer outra plataforma de API, e fazer a simples chamada no End-Point abaixo:</p>
+<ul>
+<li>https://localhost/celery/ (MÉTODO HTTP GET)</li>
+</ul>
+<p>Esta rota irá apenas retornar uma mensagem "Done" e um código 200. </p>
+<p><img alt="Mobile 1" src="../assets/celery/route.png" /></p>
+<p>Porém, se você observar no terminal que você rodou o comando do celery, poderá observar que foi executada uma ação que foi justamente mostrar na tela os números de 0 a 9. Isso mostra como o celery funciona, em que ele passa a responsabilidade da execução da operação para outra máquina, desocupando a principal para que ela possa executar  outra coisa, e quando a tarefa executada pelo Celery terminar, ele irá devolver a resposta.</p>
+<p><img alt="Mobile 1" src="../assets/celery/celery_working.png" /></p>
+<p>Utilizando a biblioteca django-celery-results nos podemos ver o resultado das tarefas executadas de uma maneira mais clara e legível. Pois com ela, nos podemos acessar o admin do django pela URL abaixo e ver que temos mais duas tabelas acrescentadas.</p>
+<ul>
+<li>https://localhost/admin/ </li>
+</ul>
+<p><img alt="Mobile 1" src="../assets/celery/celery_admin.png" /></p>
+<p>A se clicarmos em "Task results" podemos ver mais informações sobre a tarefa executada que antes eram omitidas.</p>
+<p><img alt="Mobile 1" src="../assets/celery/tasks.png" /></p>
+<p>Para a implementação do Celery na aplicação foi utilizado o link abaixo como referência para a integração do Django, Celery e o Redis.
+- <a href="https://www.youtube.com/watch?v=EfWa6KH8nVI" target="_blank">link para o vídeo</a></p>
+<h2 id="logs-e-sentry">Logs e Sentry</h2>
+<p>Logging é uma maneira de rastrear eventos que acontecem quando algum software executa. O desenvolvedor de software adiciona chamadas de logging no código para indicar que determinado evento ocorreu. Um evento é descrito por uma mensagem descritiva que pode opcionalmente conter o dado de uma variável (ex.: dado que é potencialmente diferente pra cada ocorrência do evento). Eventos também tem um peso que o desenvolvedor atribui para o evento; o peso pode também ser chamada de níveis ou severidade.</p>
+<p>Logging provê um conjunto de funções convenientes para o uso simples de logging. Estas funções são debug(), info(), warning(), error() e critical().</p>
+<p>Para uma melhor visualização dos logs, nos integramos a aplicação com Sentry, é um serviço de monitoramento que você pode configurar para se hospedar ou usado como um serviço para capturar e relatar erros em seus aplicativos da web Python .</p>
+<p>Caso queira integrar com o Sentry, você precisa criar uma variável de ambiente no arquivo .env com o link do seu projeto</p>
+<h5 id="exemplo">Exemplo #####</h5>
+<pre><code class="language-bash">SENTRY_URL = &quot;https://sua_hash@sua_hash.ingest.sentry.io/sua_hash&quot;
+</code></pre>
+<h5 id="interface-do-sentry">Interface do Sentry</h5>
+<p><img alt="Mobile 1" src="../assets/log/sentry.png" /></p>
+<p>Caso você não queira integrar com o sentry, também é criado um arquivo logfile.log com as informações dos logs.</p>
+<p><img alt="Mobile 1" src="../assets/log/logfile.png" /></p>
+<h2 id="autenticacao-jwt">Autenticação JWT</h2>
+<p> JWT (JSON Web Token) é um método RCT 7519 padrão da indústria para realizar autenticação entre duas partes por meio de um token assinado que autentica uma requisição web. Esse token é um código em Base64 que armazena objetos JSON com os dados que permitem a autenticação da requisição.</p>
+
+<p> Para fazer essa autenticação por token foi usado a biblioteca djangorestframework-simplejwt na sua versão 5.2.2 e com sua implementação vem duas rotas para isso, a de geração do token e o refresh do token. </p>
+
+<p> Para gerar o token, você precisa necessariamente de ser super usuário, e então você passa o nome de usuário e a senha na rota abaixo: </p>
+<ul>
+<li>https://localhost/token/ (MÉTODO HTTP POST)</li>
+</ul>
+<p><img alt="Mobile 1" src="../assets/auth/create_token.png" /></p>
+<p>Para gerar um novo token utilizando o refresh, basta passar o refresh token como parâmetro de entrada na rota abaixo: 
+- https://localhost/refresh/ (MÉTODO HTTP POST)</p>
+<p><img alt="Mobile 1" src="../assets/auth/refresh.png" /></p>
+<p> Durante o processo de desenvolvimento da aplicação, ocorreu um erro de integração de tecnologias ao usar a autenticação JWT e os testes, pois sempre que a autenticação das rotas estava ativa, os testes não conseguiam testar as rotas por causa de justamente não terem o token para enviar. Com isso, foi criado uma rota simples para mostrar o funcionamento da autenticação. </p>
+
+<ul>
+<li>https://localhost/api/authorization/ (MÉTODO HTTP GET)</li>
+</ul>
+<p>Caso você tente executar essa rota sem enviar o token no Header da requisição, irá apresentar erro:</p>
+<p><img alt="Mobile 1" src="../assets/auth/without_auth.png" /></p>
+<p>Caso você tente executar essa rota sem enviar o token válido, irá apresentar erro:</p>
+<p><img alt="Mobile 1" src="../assets/auth/token_not_valid.png" /></p>
+<p>Caso envie o token dessa maneira:</p>
+<p>Header = {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc0MzEyMTQwLCJpYXQiOjE2NzQzMTE4NDAsImp0aSI6ImI4NmYyMTVmZGYzNTQzOTRhNmUzMDM1NWZkNTY2ZjhiIiwidXNlcl9pZCI6MX0.T-1bg-5sVZ_4B8VHjdG5MIOYc6WsDxEnLovyPbAXj8g"}</p>
+<p>Irá apresentar essa mensagem simples:</p>
+<p><img alt="Mobile 1" src="../assets/auth/have_authorization.png" /></p>
+<h2 id="docker">Docker</h2>
+<p>Docker é uma forma de virtualizar aplicações no conceito de “containers”, trazendo da web ou de seu repositório interno uma imagem completa, incluindo todas as dependências necessárias para executar sua aplicação.</p>
+<p>A aplicação uma segunda forma de funcionar que é a partir de imagem e containers do Docker, e para isso, você precisa ter o Docker instalado na sua máquina.</p>
+<p><a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank">link para instalar</a></p>
+<h3 id="como-rodar-pelo-docker">COMO RODAR PELO DOCKER</h3>
+<pre><code class="language-bash"># Fazer o build da imagem
+docker build .
+
+# Executar a imagem
+docker-compose up -d --build
+
+# Criar as tabelas do Banco de Dados dentro do container
+docker-compose exec api python src/manage.py migrate
+
+# Criar um superusuário
+docker-compose exec api python src/manage.py createsuperuser
+
+# Finalizar a imagem, caso necessite
+docker-compose down
+
+# Após os passos anteriores, para executar a imagem novamente, utilize apenas o comando abaixo
+docker-compose up
+
+</code></pre>
+<h4 id="imagem-criada">Imagem criada</h4>
+<p><img alt="Mobile 1" src="../assets/docker/build.png" /></p>
+<h4 id="rodando-a-partir-do-docker">Rodando a partir do Docker</h4>
+<h5 id="django-api">Django API</h5>
+<p><img alt="Mobile 1" src="../assets/docker/docker-api-running.png" /></p>
+<h5 id="postgres-database">Postgres DataBase</h5>
+<p><img alt="Mobile 1" src="../assets/docker/docker-postgres-running.png" /></p>
+<h5 id="redis_1">Redis</h5>
+<p><img alt="Mobile 1" src="../assets/docker/docker-redis-running.png" /></p>
+<h5 id="celery_1">Celery</h5>
+<p><img alt="Mobile 1" src="../assets/docker/docker-celery-running.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
